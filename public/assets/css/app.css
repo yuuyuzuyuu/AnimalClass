@@ -1,0 +1,15 @@
+#page-link {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#page-link li {
+    list-style: none;
+}
+
+#page-link li a {
+    color: #333;
+    padding: 0 20px;
+    text-decoration: none;
+}
