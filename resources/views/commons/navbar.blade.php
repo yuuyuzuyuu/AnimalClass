@@ -10,6 +10,7 @@
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
                 @if (Auth::check())
+                    <li>{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()]) !!}</li>
                     <li>{!! link_to_route('logout.get', 'ログアウト') !!}</li>
                 @else
                     <li>{!! link_to_route('signup.get', '会員登録', [], ['class' => 'nav-link']) !!}</li>
