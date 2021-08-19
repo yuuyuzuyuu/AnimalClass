@@ -25,4 +25,9 @@
     </tr>
 </table>
 
+{!! link_to_route('users.edit', '編集', ['user' => $user->id], ['class' => 'btn btn-block']) !!}
+
+<h3>▶お気に入り</h3>
+<h3>▶予定</h3>
+
 @endsection
