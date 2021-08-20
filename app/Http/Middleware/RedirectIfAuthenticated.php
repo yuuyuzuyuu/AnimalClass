@@ -22,6 +22,8 @@ class RedirectIfAuthenticated
             return redirect(RouteServiceProvider::HOME);
         } elseif (Auth::guard($guard)->check() && $guard === 'admin') {
             return redirect(RouteServiceProvider::ADMIN_HOME);
+        } elseif (Auth::guard($guard)->check() && $guard === 'center') {
+            return redirect(RouteServiceProvider::CENTER_HOME);
         }
 
         return $next($request);

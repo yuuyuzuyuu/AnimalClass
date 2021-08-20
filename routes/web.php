@@ -29,11 +29,22 @@ Route::post('login', 'User\Auth\LoginController@login')->name('user.login.post')
 Route::get('logout', 'User\Auth\LoginController@logout')->name('user.logout.get');
 
 // 管理者
-
 Route::get('admin/login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
 Route::post('admin/login', 'Admin\Auth\LoginController@login')->name('admin.login.post');
 Route::get('admin/logout', 'Admin\Auth\LoginController@logout')->name('admin.logout.get');
 
 Route::group(['middleware' => ['auth:admin']], function() {
   Route::resource('admin', 'Admin\HomeController');
+});
+
+//センター
+Route::get('center/signup', 'Center\Auth\RegisterController@showRegistrationForm')->name('center.signup.get');
+Route::post('center/signup', 'Center\Auth\RegisterController@register')->name('center.signup.post');
+
+Route::get('center/login', 'Center\Auth\LoginController@showLoginForm')->name('center.login');
+Route::post('center/login', 'Center\Auth\LoginController@login')->name('center.login.post');
+Route::get('center/logout', 'Center\Auth\LoginController@logout')->name('center.logout.get');
+
+Route::group(['middleware' => ['auth:center']], function() {
+  Route::resource('center', 'Center\HomeController');
 });
