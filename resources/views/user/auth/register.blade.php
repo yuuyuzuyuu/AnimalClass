@@ -33,7 +33,7 @@
                         {!! Form::label('pref', '都道府県') !!}
                         {!! Form::select('pref', Config::get('pref'), null, ['class' => 'form-control']) !!}
                     </div>
-                    
+
                     <div class="form-group">
                         {!! Form::label('password', 'パスワード') !!}
                         {!! Form::password('password', ['class' => 'form-control']) !!}

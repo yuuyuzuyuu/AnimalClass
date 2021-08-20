@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>マイページ</h1>
-<table class="table">
+<table class="table table-borderless">
     <tr>
         <th>なまえ</th>
         <td>{{ $user -> name }}</td>
@@ -25,7 +25,7 @@
     </tr>
 </table>
 
-{!! link_to_route('users.edit', '編集', ['user' => $user->id], ['class' => 'btn btn-block']) !!}
+{!! link_to_route('user.edit', '編集', ['user' => $user->id], ['class' => 'btn btn-block']) !!}
 
 <h3>▶お気に入り</h3>
 <h3>▶予定</h3>

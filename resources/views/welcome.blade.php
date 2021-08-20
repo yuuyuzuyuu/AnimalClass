@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="text-center">
-        <h1>Welcome</h1>
+        <a href="/">Animal Class</a>
     </div>
     
     <ul id="page-link">

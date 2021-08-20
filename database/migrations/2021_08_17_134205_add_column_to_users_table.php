@@ -27,10 +27,6 @@ class AddColumnToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->atring('nickname');
-            $table->string('tel');
-            $table->integer('address_id');
-        });
+        Schema::DropIfExists('users');
     }
 }

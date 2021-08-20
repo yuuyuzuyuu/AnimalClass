@@ -15,13 +15,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['auth']], function() {
-   Route::resource('users', 'UsersController') ;
+
+// ユーザ
+Route::group(['middleware' => ['auth:user']], function() {
+  Route::resource('user', 'User\UsersController');
 });
 
-Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
-Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
+Route::get('signup', 'User\Auth\RegisterController@showRegistrationForm')->name('signup.get');
+Route::post('signup', 'User\Auth\RegisterController@register')->name('signup.post');
 
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login')->name('login.post');
-Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
+Route::get('login', 'User\Auth\LoginController@showLoginForm')->name('user.login');
+Route::post('login', 'User\Auth\LoginController@login')->name('user.login.post');
+Route::get('logout', 'User\Auth\LoginController@logout')->name('user.logout.get');
+
+// 管理者
+
+Route::get('admin/login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
+Route::post('admin/login', 'Admin\Auth\LoginController@login')->name('admin.login.post');
+Route::get('admin/logout', 'Admin\Auth\LoginController@logout')->name('admin.logout.get');
+
+Route::group(['middleware' => ['auth:admin']], function() {
+  Route::resource('admin', 'Admin\HomeController');
+});
