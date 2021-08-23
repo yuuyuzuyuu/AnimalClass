@@ -56,6 +56,10 @@ class HomeController extends Controller
         $center->pref = $request->pref;
         $center->address = $request->address;
         $center->postcode = $request->postcode;
+        $center->homepage = $request->homepage;
+        $center->instagram = $request->instagram;
+        $center->twitter = $request->twitter;
+        $center->facebook = $request->facebook;
         $center->save();
         return redirect('center/'.$center->id);
     }

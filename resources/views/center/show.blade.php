@@ -23,6 +23,23 @@
         <th>都道府県以下住所</th>
         <td>{{ $center -> address }}</td>
     </tr>
+    <tr>
+        <th>SNS</th>
+        <td>
+            @if ($center->homepage)
+                <a href="{{ $center->homepage }}"><i class="fas fa-home fa-3x"></i></a>
+            @endif
+            @if ($center->instagram)
+                <a href="{{ $center->instagram }}"><i class="fab fa-instagram fa-3x"></i></a>
+            @endif
+            @if ($center->twitter)
+                <a href="{{ $center->twitter }}"><i class="fab fa-twitter fa-3x"></i></i></a>
+            @endif
+            @if ($center->facebook)
+                <a href="{{ $center->facebook }}"><i class="fab fa-facebook fa-3x"></i></a>
+            @endif
+        </td>
+    </tr>
 
 </table>
 

@@ -69,10 +69,10 @@ class RegisterController extends Controller
             'postcode' => ['required', 'string', 'max:7'],
             'pref' => ['required', 'integer'],
             'address' => ['required', 'string'],
-            'homepage' => ['string'],
-            'instagram' => ['string'],
-            'twitter' => ['string'],
-            'facebook' => ['string'],
+            'homepage' => ['nullable', 'string'],
+            'instagram' => ['nullable', 'string'],
+            'twitter' => ['nullable', 'string'],
+            'facebook' => ['nullable', 'string'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
