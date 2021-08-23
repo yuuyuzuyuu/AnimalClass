@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function getPrefNameAttribute() {
         return config('pref.'.$this->pref);
     }
+    
+    public static $editRules = array (
+        'password' => 'comfirmed'
+    );
 }

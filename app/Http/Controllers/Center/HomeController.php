@@ -51,7 +51,7 @@ class HomeController extends Controller
     {
         $center->name = $request->name;
         $center->email = $request->email;
-        $center->password = $request->password;
+        $center->password = bcrypt($request->password);
         $center->tel = $request->tel;
         $center->pref = $request->pref;
         $center->address = $request->address;

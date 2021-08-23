@@ -9,9 +9,9 @@
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
-                @if (Auth::check())
-                    <li>{!! link_to_route('center.show', 'マイページ', ['center' => Auth::id()]) !!}</li>
-                    <li>{!! link_to_route('center.logout.get', 'ログアウト') !!}</li>
+                @if (Auth::guard('center')->check())
+                    <li>{!! link_to_route('center.show', 'マイページ', ['center' => Auth::id()], ['class' => 'nav-link']) !!}</li>
+                    <li>{!! link_to_route('center.logout.get', 'ログアウト',[], ['class' => 'nav-link']) !!}</li>
                 @else
                     <li>{!! link_to_route('center.signup.get', '会員登録', [], ['class' => 'nav-link']) !!}</li>
                     <li>{!! link_to_route('center.login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>

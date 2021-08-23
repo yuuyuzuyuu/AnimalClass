@@ -9,7 +9,7 @@
     </head>
   
     <body>
-        @include('commons.navbar')
+        @include('commons.admin_navbar')
         <div class="container">
             @include('commons.error_messages')
             @yield('content')

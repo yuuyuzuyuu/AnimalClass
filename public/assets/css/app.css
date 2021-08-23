@@ -1,6 +1,7 @@
 /*全体*/
 body {
-    background-color: #EDF6E5;
+    background-color: #FFF6F6;
+    /*font-family: 'Sawarabi Gothic', sans-serif;*/
 }
 
 a {
@@ -8,8 +9,13 @@ a {
     text-decoration: none;
 }
 
-/*ページリンク*/
+footer {
+    margin: 100px;
+}
 
+/*userトップページ*/
+
+/*ページリンク*/
 #page-link {
     display: flex;
     justify-content: center;
@@ -23,4 +29,8 @@ a {
 #page-link li a {
     padding: 0 20px;
     text-decoration: none;
+}
+
+#top, #about, #dogsandcats, #reservation, #contact, #sns {
+    padding: 150px 0;
 }
