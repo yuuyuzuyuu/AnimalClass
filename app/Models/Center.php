@@ -16,7 +16,7 @@ class Center extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'tel', 'pref', 'address', 'postcode',
+        'name', 'email', 'password', 'tel', 'pref', 'address', 'postcode', 'homepage', 'instagram', 'twitter', 'facebook',
     ];
 
     /**

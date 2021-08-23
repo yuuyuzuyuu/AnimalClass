@@ -20,6 +20,10 @@ class CreateCentersTable extends Migration
             $table->string('postcode');
             $table->string('pref');
             $table->string('address');
+            $table->string('homepage');
+            $table->string('instagram');
+            $table->string('twitter');
+            $table->string('facebook');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
