@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Center;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Center;
 
 class HomeController extends Controller
 {
@@ -11,78 +12,54 @@ class HomeController extends Controller
     {
         $this->middleware('auth:center');
     }
-    
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         return view('center.home');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        $center = Center::findOrFail($id);
+        
+        return view('center.show', [
+            'center' => $center,
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $center = Center::findOrFail($id);
+        
+        return view('center.edit', [
+           'center' => $center, 
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+
+    public function update(Request $request, Center $center)
     {
-        //
+        $center->name = $request->name;
+        $center->email = $request->email;
+        $center->password = $request->password;
+        $center->tel = $request->tel;
+        $center->pref = $request->pref;
+        $center->address = $request->address;
+        $center->postcode = $request->postcode;
+        $center->save();
+        return redirect('center/'.$center->id);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

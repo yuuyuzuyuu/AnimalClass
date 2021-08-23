@@ -16,6 +16,7 @@
                     <li>{!! link_to_route('signup.get', '会員登録', [], ['class' => 'nav-link']) !!}</li>
                     <li>{!! link_to_route('user.login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
                 @endif
+                    <li>{!! link_to_route('center.index', 'センターの方はこちら', [], ['class' => 'nav-link']) !!}</li>
             </ul>
         </div>
     </nav>

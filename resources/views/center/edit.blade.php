@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="text-center">
-        <h1>会員登録(施設側)</h1>
+        <h1>編集(施設側)</h1>
     </div>
 
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
 
-            {!! Form::open(['route' => 'center.signup.post']) !!}
+            {!! Form::model($center, ['route' => ['center.update', $center->id], 'method' => 'put']) !!}
                 <div class="form-group">
                     {!! Form::label('name', '施設名') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}

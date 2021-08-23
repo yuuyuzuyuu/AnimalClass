@@ -26,7 +26,9 @@ class UsersController extends Controller
     {
         $user = User::findOrFail($id);
         
-        return view('users.edit', ['user' => $user]);
+        return view('user.edit', [
+            'user' => $user,
+        ]);
     }
 
     public function update(Request $request, User $user)
@@ -38,6 +40,6 @@ class UsersController extends Controller
         $user->pref = $request->pref;
         $user->password = $request->password;
         $user->save();
-        return redirect('users/'.$user->id);
+        return redirect('user/'.$user->id);
     }
 }
