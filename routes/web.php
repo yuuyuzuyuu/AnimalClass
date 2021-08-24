@@ -14,11 +14,13 @@
 Route::get('/', function () {
     return view('user/welcome');
 });
-Route::resource('animals', 'AnimalsController', ['only' => ['index', 'show']]);
+
+Route::resource('animals', 'AnimalsController', ['only' => ['index']]);
 
 // ユーザ
 Route::group(['middleware' => ['auth:user']], function() {
   Route::resource('user', 'User\UsersController');
+  Route::resource('animals', 'AnimalsController', ['only' => ['show']]);
 });
 
 Route::get('signup', 'User\Auth\RegisterController@showRegistrationForm')->name('signup.get');

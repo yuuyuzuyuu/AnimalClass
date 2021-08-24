@@ -5,7 +5,7 @@
         <div class="text-center">
             <a href="/">Animal Class</a>
         </div>
-        
+
             <ul id="page-link">
             <li><a href="#top">TOP</a></li>
             <li><a href="#about">ABOUT</a></li>
@@ -14,7 +14,7 @@
             <li><a href="#contact">CONTACT</a></li>
             <li><a href="#sns">SNS</a></li>
         </ul>
-                
+
         <section id="top">
             <div class="row">
                 <div class="col-md-8">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </section>
-                
+
         <section id="about">
             <div class="row">
                 <div class="col-md-4">
@@ -40,18 +40,16 @@
                 </div>
             </div>
         </section>
-                
+
         <section id="dogsandcats">
             <h2 class="text-center">Dogs and Cats</h2>
                 <div class="text-center">
                     <p>現在、施設でお預かりしている子たちです。</p>
                     <p>情報の更新は施設が逐一行っておりますが、<br>既に譲渡が決定してしまっている子がいる場合もありますので<br>ご了承ください。</p>
                 </div>
-                <div class="animal-index">
-                    animal photos
-                </div>
+                    {!! link_to_route('animals.index', 'わんにゃん一覧', []) !!}
         </section>
-                
+
         <section id="reservation">
             <div class="row">
                 <div class="col-md-8">
@@ -63,7 +61,7 @@
                 </div>
             </div>
         </section>
-                
+
         <section id="contact">
             <div class="row">
                 <div class="col-md-4">
@@ -77,7 +75,7 @@
                 </div>
             </div>
         </section>
-                
+
         <section id="sns">
             <h2 class="text-center">SNS</h2>
         </section>
