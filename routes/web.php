@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('user/welcome');
 });
-
+Route::resource('animals', 'AnimalsController', ['only' => ['index', 'show']]);
 
 // ユーザ
 Route::group(['middleware' => ['auth:user']], function() {
@@ -47,4 +47,5 @@ Route::get('center/logout', 'Center\Auth\LoginController@logout')->name('center.
 
 Route::group(['middleware' => ['auth:center']], function() {
   Route::resource('center', 'Center\HomeController');
+  Route::resource('animals', 'AnimalsController', ['only' => ['create', 'store', 'destroy', 'edit', 'update']]);
 });

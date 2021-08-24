@@ -27,16 +27,16 @@
         <th>SNS</th>
         <td>
             @if ($center->homepage)
-                <a href="{{ $center->homepage }}"><i class="fas fa-home fa-3x"></i></a>
+                <a href="{{ $center->homepage }}"><i class="fas fa-home fa-2x"></i></a>
             @endif
             @if ($center->instagram)
-                <a href="{{ $center->instagram }}"><i class="fab fa-instagram fa-3x"></i></a>
+                <a href="{{ $center->instagram }}"><i class="fab fa-instagram fa-2x"></i></a>
             @endif
             @if ($center->twitter)
-                <a href="{{ $center->twitter }}"><i class="fab fa-twitter fa-3x"></i></i></a>
+                <a href="{{ $center->twitter }}"><i class="fab fa-twitter fa-2x"></i></i></a>
             @endif
             @if ($center->facebook)
-                <a href="{{ $center->facebook }}"><i class="fab fa-facebook fa-3x"></i></a>
+                <a href="{{ $center->facebook }}"><i class="fab fa-facebook fa-2x"></i></a>
             @endif
         </td>
     </tr>

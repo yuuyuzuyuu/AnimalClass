@@ -41,7 +41,7 @@
             </div>
         </section>
                 
-        <section id="dogandcat">
+        <section id="dogsandcats">
             <h2 class="text-center">Dogs and Cats</h2>
                 <div class="text-center">
                     <p>現在、施設でお預かりしている子たちです。</p>

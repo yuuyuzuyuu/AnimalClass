@@ -37,7 +37,19 @@ class Center extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // 都道府県データ取得
     public function getPrefNameAttribute() {
         return config('pref.'.$this->pref);
+    }
+    
+    public function animals()
+    {
+        return $this->hasMany(Animal::class);
+    }
+    
+    // 動物の数をロード
+    public function loadAnimalCounts()
+    {
+        $this->loadCount('animals');
     }
 }

@@ -12,10 +12,13 @@
                 @if (Auth::guard('user')->check())
                     <li>{!! link_to_route('user.show', 'マイページ', ['user' => Auth::id()], ['class' => 'nav-link']) !!}</li>
                     <li>{!! link_to_route('user.logout.get', 'ログアウト', [], ['class' => 'nav-link']) !!}</li>
+                @elseif (Auth::guard('center')->check())
+                    <li>{!! link_to_route('center.show', 'マイページ', ['center' => Auth::id()], ['class' => 'nav-link']) !!}</li>
+                    <li>{!! link_to_route('center.logout.get', 'ログアウト',[], ['class' => 'nav-link']) !!}</li>
                 @else
                     <li>{!! link_to_route('signup.get', '会員登録', [], ['class' => 'nav-link']) !!}</li>
                     <li>{!! link_to_route('user.login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
-                @endauth
+                @endif
                     <li>{!! link_to_route('center.index', 'センターの方はこちら', [], ['class' => 'nav-link']) !!}</li>
             </ul>
         </div>
