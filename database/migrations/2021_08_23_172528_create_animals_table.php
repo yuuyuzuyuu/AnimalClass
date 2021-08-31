@@ -3,6 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Enums\Gender;
+use App\Enums\AnimalType;
+use App\Enums\ActiveStatus;
 
 class CreateAnimalsTable extends Migration
 {
@@ -21,11 +24,11 @@ class CreateAnimalsTable extends Migration
             $table->string('image3')->nullable();
             $table->string('name');
             $table->integer('age');
-            $table->enum('gender', ['boy', 'girl']);
+            $table->enum('gender', Gender::getValues());
             $table->string('type');
-            $table->enum('animal_type', ['dog', 'cat']);
+            $table->enum('animal_type', AnimalType::getValues());
             $table->text('introduction');
-            $table->boolean('active_status')->default(true);
+            $table->enum('active_status', ActiveStatus::getValues());
             $table->timestamps();
             
             $table->foreign('center_id')->references('id')->on('centers');

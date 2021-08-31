@@ -8,6 +8,12 @@
 
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
+            
+            <div class="caution">
+                <span class="caution-title">注意</span>
+                <p>わんちゃんねこちゃんの詳細閲覧やお気に入り登録には</p>
+                <p>会員登録が必要となっております。</p>
+            </div>  
 
             {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">

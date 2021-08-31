@@ -2,11 +2,7 @@
 
 @section('content')
     <div class="user-top">
-        <div class="text-center">
-            <a href="/">Animal Class</a>
-        </div>
-
-            <ul id="page-link">
+        <ul id="page-link">
             <li><a href="#top">TOP</a></li>
             <li><a href="#about">ABOUT</a></li>
             <li><a href="#dogsandcats">Dogs and Cats</a></li>
@@ -18,10 +14,10 @@
         <section id="top">
             <div class="row">
                 <div class="col-md-8">
-                    <img src="/images/cat1.jpg">
+                    <img src="/images/cat1.png">
                 </div>
                 <div class="col-md-4">
-                    <p>わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？</p>
+                    <p class="text-center">わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？</p>
                 </div>
             </div>
         </section>
@@ -29,20 +25,19 @@
         <section id="about">
             <div class="row">
                 <div class="col-md-4">
-                    <h2>ABOUT</h2>
-                    <p>あにまるくらすでは、<br>わんちゃんねこちゃんの<br>新しい家族を募集しています。</p>
-                    <p>みんな、血統書付きの動物ではないけれど、<br>幸せになりたくて産まれてきました。</p>
+                    <div class="top-title">ABOUT</div>
+                    <p>あにまるくらすでは、<br>保護されたわんちゃんねこちゃんたちと<br>新しい家族をつなげる活動を行っています。</p>
+                    <p>大切にしてくれる家族に出会えるのを、<br>みんな心待ちにしています。</p>
                     <p>どんな子がいるのか、<br>ちょっと覗いてみませんか？</p>
-                    <p>【注意】コメントをしたり、<br>お気に入り登録をしたりするには<br>ユーザー登録が必要です。</p>
                 </div>
                 <div class="col-md-8">
-                    <img src="/images/cat1.jpg">
+                    <img src="/images/dog1.png">
                 </div>
             </div>
         </section>
 
         <section id="dogsandcats">
-            <h2 class="text-center">Dogs and Cats</h2>
+            <div class="top-title text-center">Dogs and Cats</div>
                 <div class="text-center">
                     <p>現在、施設でお預かりしている子たちです。</p>
                     <p>情報の更新は施設が逐一行っておりますが、<br>既に譲渡が決定してしまっている子がいる場合もありますので<br>ご了承ください。</p>
@@ -53,10 +48,10 @@
         <section id="reservation">
             <div class="row">
                 <div class="col-md-8">
-                    <img src="/images/cat1.jpg">
+                    <img src="/images/cat2.png">
                 </div>
                 <div class="col-md-4">
-                    <h2>Reservation</h2>
+                    <div class="top-title">Reservation</div>
                     <p>直接会ってみたい方は、<br>こちらで予約を受け付けております。</p>
                 </div>
             </div>
@@ -65,19 +60,24 @@
         <section id="contact">
             <div class="row">
                 <div class="col-md-4">
-                    <h2>Contact</h2>
+                    <div class="top-title">Contact</div>
                     <p>何かご不明な点がございましたら、<br>お気軽にお問い合わせください。</p>
                     <p>フォームにてお問い合わせの際には<br>会員登録をお願いしております。</p>
                     <p>Tel.000-0000-0000</p>
                 </div>
                 <div class="col-md-8">
-                    <img src="/images/cat1.jpg">
+                    <img src="/images/dog2.png">
                 </div>
             </div>
         </section>
 
         <section id="sns">
-            <h2 class="text-center">SNS</h2>
+            <div class="top-title text-center">SNS</div>
+                <div class="icon text-center">
+                    <a href="https://www.instagram.com/"><i class="fab fa-instagram fa-4x"></i></a>
+                    <a href="https://twitter.com/"><i class="fab fa-twitter fa-4x"></i></a>
+                    <a href="https://ja-jp.facebook.com/"><i class="fab fa-facebook fa-4x"></i></a>
+                </div>
         </section>
     </div>
 

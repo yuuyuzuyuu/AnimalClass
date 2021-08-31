@@ -2,13 +2,20 @@
 
 @section('content')
     <div class="text-center">
-        <h1>会員登録(施設側)</h1>
+        <h1>会員登録(施設用)</h1>
         <p>*がついている欄は必須項目です。</p>
     </div>
+        
 
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
 
+            <div class="caution">
+                <span class="caution-title">注意</span>
+                <p>わんちゃんねこちゃんの登録や詳細閲覧には</p>
+                <p>会員登録が必要となっております。</p>
+            </div>
+            
             {!! Form::open(['route' => 'center.signup.post']) !!}
                 <div class="form-group">
                     {!! Form::label('name', '施設名*') !!}

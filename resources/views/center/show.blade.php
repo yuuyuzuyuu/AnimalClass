@@ -33,7 +33,7 @@
                 <a href="{{ $center->instagram }}"><i class="fab fa-instagram fa-2x"></i></a>
             @endif
             @if ($center->twitter)
-                <a href="{{ $center->twitter }}"><i class="fab fa-twitter fa-2x"></i></i></a>
+                <a href="{{ $center->twitter }}"><i class="fab fa-twitter fa-2x"></i></a>
             @endif
             @if ($center->facebook)
                 <a href="{{ $center->facebook }}"><i class="fab fa-facebook fa-2x"></i></a>

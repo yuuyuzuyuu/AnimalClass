@@ -13,11 +13,6 @@ class HomeController extends Controller
         $this->middleware('auth:center');
     }
 
-    public function index()
-    {
-        return view('center.home');
-    }
-
     public function create()
     {
         //

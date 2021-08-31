@@ -3,52 +3,56 @@
 @section('content')
 
     <h1>NEW animal</h1>
-    
+
     <div class="row">
-        <div class="col-md-6">
-            {!! Form::model($animal, ['route' => 'animals.store']!!}
+            {!! Form::model($animal, ['route' => 'animals.store', 'files' => true]) !!}
                 <div class="form-group">
-                    {!! Form::label('', '') !!}
-                    {!! Form::('', , ['class' => 'form-control']) !!}
+                    {!! Form::label('name', 'なまえ') !!}
+                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('', '') !!}
-                    {!! Form::('', , ['class' => 'form-control']) !!}
+                    {!! Form::label('age', '年齢') !!}
+                    {!! Form::select('age', Config::get('age'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('', '') !!}
-                    {!! Form::('', , ['class' => 'form-control']) !!}
+                    {!! Form::label('gender', '性別') !!}
+                    {!! Form::select('gender', $gender, null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('', '') !!}
-                    {!! Form::('', , ['class' => 'form-control']) !!}
+                    {!! Form::label('animal_type', '犬・猫') !!}
+                    {!! Form::select('animal_type', $animal_type, null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('', '') !!}
-                    {!! Form::('', , ['class' => 'form-control']) !!}
+                    {!! Form::label('type', '種類(猫)') !!}
+                    {!! Form::select('type', Config::get('cats'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('', '') !!}
-                    {!! Form::('', , ['class' => 'form-control']) !!}
+                    {!! Form::label('type', '種類(犬)') !!}
+                    {!! Form::select('type', Config::get('dogs'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('', '') !!}
-                    {!! Form::('', , ['class' => 'form-control']) !!}
+                    {!! Form::label('introduction', '紹介文') !!}
+                    {!! Form::textarea('introduction', null, ['class' => 'form-control', 'rows' => '4']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('', '') !!}
-                    {!! Form::('', , ['class' => 'form-control']) !!}
+                    {!! Form::label('active_status', '募集状況') !!}
+                    {!! Form::select('active_status', $active_status, null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('', '') !!}
-                    {!! Form::('', , ['class' => 'form-control']) !!}
+                    {!! Form::label('image1', '写真１') !!}
+                    {!! Form::file('image1', null, ['class' => 'custom-file-input']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('', '') !!}
-                    {!! Form::('', , ['class' => 'form-control']) !!}
+                    {!! Form::label('image2', '写真２') !!}
+                    {!! Form::file('image2', null, ['class' => 'custom-file-input']) !!}
                 </div>
+                <div class="form-group">
+                    {!! Form::label('image3', '写真３') !!}
+                    {!! Form::file('image3', null, ['class' => 'custom-file-input']) !!}
+                </div>
+            {!! Form::submit('投稿', ['class' => 'btn btn-block']) !!}
+
             {!! Form::close() !!}
-        </div>
     </div>
 
 
