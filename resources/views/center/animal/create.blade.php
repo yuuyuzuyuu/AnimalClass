@@ -24,11 +24,11 @@
                 </div>
                 <div class="form-group">
                     {!! Form::label('type', '種類(猫)') !!}
-                    {!! Form::select('type', Config::get('cats'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
+                    {!! Form::select('type', Config::get('type.Cats'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('type', '種類(犬)') !!}
-                    {!! Form::select('type', Config::get('dogs'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
+                    {!! Form::select('type', Config::get('type.Dogs'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('introduction', '紹介文') !!}

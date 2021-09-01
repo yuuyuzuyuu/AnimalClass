@@ -16,11 +16,11 @@ final class AnimalType extends Enum
     
     public static function getDescription($value): string
     {
-        if ($value === self::Cat) {
+        if ($value == self::Cat) {
             return '猫';
         }
         
-        if ($value === self::Dog) {
+        if ($value == self::Dog) {
             return '犬';
         }
         return parent::getDescription($value);
@@ -28,7 +28,7 @@ final class AnimalType extends Enum
     
     public static function getValue(string $key)
     {
-        if ($key === '猫') {
+        if ($key == '猫') {
             return self::Cat;
         }
         

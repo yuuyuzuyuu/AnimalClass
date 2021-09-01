@@ -16,11 +16,11 @@ final class ActiveStatus extends Enum
     
     public static function getDescription($value): string
     {
-        if ($value === self::Start) {
+        if ($value == self::Start) {
             return '募集中';
         }
         
-        if ($value === self::End) {
+        if ($value == self::End) {
             return '募集終了';
         }
         return parent::getDescription($value);
@@ -28,11 +28,11 @@ final class ActiveStatus extends Enum
     
     public static function getValue(string $key)
     {
-        if ($key === '募集中') {
+        if ($key == '募集中') {
             return self::Start;
         }
         
-        if ($key === '募集終了') {
+        if ($key == '募集終了') {
             return self::End;
         }
         return parent::getValue($key);

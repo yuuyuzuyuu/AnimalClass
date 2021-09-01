@@ -16,11 +16,11 @@ final class Gender extends Enum
     
     public static function getDescription($value): string
     {
-        if ($value === self::Boy) {
+        if ($value == self::Boy) {
             return '男の子';
         }
         
-        if ($value === self::Girl) {
+        if ($value == self::Girl) {
             return '女の子';
         }
         return parent::getDescription($value);
@@ -28,11 +28,11 @@ final class Gender extends Enum
     
     public static function getValue(string $key)
     {
-        if ($key === '男の子') {
+        if ($key == '男の子') {
             return self::Boy;
         }
         
-        if ($key === '女の子') {
+        if ($key == '女の子') {
             return self::Girl;
         }
         return parent::getValue($key);

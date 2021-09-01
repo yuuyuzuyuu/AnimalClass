@@ -15,13 +15,13 @@ class Animal extends Model
         return $this->belongsTo(Center::class);
     }
     
-    // // 動物の種類取得
-    // public function getCatsNameAttribute() {
-    //     return config('cats.'.$this->type);
-    // }
+    // 動物の種類取得
+    public function getTypeNameAttribute() {
+        return config('type.'.$this->type);
+    }
     
     // 動物の年齢取得
-    // public function getAgeAttribute() {
-    //     return config('age.'.$this->age);
-    // }
+    public function getAgeNameAttribute() {
+        return config('age.'.$this->age);
+    }
 }
