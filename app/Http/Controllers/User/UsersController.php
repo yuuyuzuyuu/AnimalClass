@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Animal;
 
 class UsersController extends Controller
 {
@@ -15,7 +16,11 @@ class UsersController extends Controller
     
     public function index()
     {
-        return view('user.welcome');
+        $animals = Animal::orderBy('created_at', 'desc')->take(4)->get();
+        
+        return view('user.welcome', [
+            'animals' => $animals,
+        ]);
     }
     
     public function show($id)

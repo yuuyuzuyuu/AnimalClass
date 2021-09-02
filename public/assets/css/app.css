@@ -94,7 +94,7 @@ footer {
     width: 270px;
     display: inline-block;
     padding: 10px;
-    margin-left: 20px;
+    margin-left: 5px;
     margin-bottom: 30px;
     background-color: #E7D4B5;
     border-radius: 10px;
@@ -110,3 +110,36 @@ footer {
 }
 
 /*わんにゃん詳細*/
+.information-box {
+    position: relative;
+    padding: 0.5em 0.7em;
+    margin: 2em 0;
+    border-radius: 20px;
+    background-color: #A0937D;
+    color: white;
+}
+
+.information-box:after {
+    position: absolute;
+    content: '';
+    top: 100%;
+    left: 30px;
+    border: 15px solid transparent;
+    border-top: 15px solid #A0937D;
+    width: 0;
+    height: 0;
+}
+
+.information-box p {
+    margin: 0;
+    padding: 0 0 0 5px;
+}
+
+.information-form {
+    margin-top: 30px;
+}
+
+.information-time {
+    text-align: right;
+    font-size: 12px;
+}

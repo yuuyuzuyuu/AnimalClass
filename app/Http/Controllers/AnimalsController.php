@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Animal;
 use App\Models\Center;
+use App\Models\Information;
 use App\Enums\Gender;
 use App\Enums\ActiveStatus;
 use App\Enums\AnimalType;
@@ -40,7 +41,7 @@ class AnimalsController extends Controller
     public function store(Request $request)
     {
         $center = \Auth::user('center');
-        
+
         if(isset($request->dog_type)) {
             $request['type'] = $request->dog_type;
         } else {
@@ -56,7 +57,7 @@ class AnimalsController extends Controller
             'introduction' => 'required|max:255',
             'active_status' => 'required',
         ]);
-        
+
         if ($file = $request->image1) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads/');
@@ -102,9 +103,13 @@ class AnimalsController extends Controller
     {
         $animal = Animal::findorFail($id);
         $center = Center::find('center');
+        $information = Information::find('information');
+        $informations = $animal->informations();
 
         return view('user.animal.show', [
             'animal' => $animal,
+            'information' => $information,
+            'informations' => $informations,
         ]);
     }
 
@@ -127,7 +132,7 @@ class AnimalsController extends Controller
     public function update(Request $request, $id)
     {
         $animal = Animal::findorFail($id);
-        
+
         if(isset($request->dog_type)) {
             $request['type'] = $request->dog_type;
         } else {
@@ -143,7 +148,7 @@ class AnimalsController extends Controller
             'introduction' => 'required|max:255',
             'active_status' => 'required',
         ]);
-        
+
         if ($file = $request->image1) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads/');

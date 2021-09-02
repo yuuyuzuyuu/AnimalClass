@@ -15,7 +15,13 @@ class CreateInformationsTable extends Migration
     {
         Schema::create('informations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('animal_id');
+            $table->unsignedBigInteger('center_id');
+            $table->string('content');
             $table->timestamps();
+            
+            $table->foreign('animal_id')->references('id')->on('animals');
+            $table->foreign('center_id')->references('id')->on('centers');
         });
     }
 

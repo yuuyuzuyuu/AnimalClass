@@ -51,9 +51,9 @@ class HomeController extends Controller
             'postcode' => 'required|max:7',
             'pref' => 'required',
             'address' => 'required',
-            'password' => 'required|min:',
+            'password' => 'required|min:8',
         ]);
-        
+
         $center->name = $request->name;
         $center->email = $request->email;
         $center->password = bcrypt($request->password);

@@ -41,12 +41,17 @@ class Center extends Authenticatable
     public function getPrefNameAttribute() {
         return config('pref.'.$this->pref);
     }
-    
+
     public function animals()
     {
         return $this->hasMany(Animal::class);
     }
-    
+
+    public function informations()
+    {
+        return $this->hasMany(Information::class);
+    }
+
     // 動物の数をロード
     public function loadAnimalCounts()
     {

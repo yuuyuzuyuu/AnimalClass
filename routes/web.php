@@ -57,4 +57,5 @@ Route::group(['prefix' => 'center'], function () {
 Route::group(['middleware' => ['auth:center']], function() {
   Route::resource('center', 'Center\HomeController');
   Route::resource('animals', 'AnimalsController', ['only' => ['create', 'store', 'destroy', 'edit', 'update']]);
+  Route::resource('informations', 'InformationsController', ['only' => ['store', 'destroy']]);
 });

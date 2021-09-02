@@ -42,7 +42,8 @@
                     <p>現在、施設でお預かりしている子たちです。</p>
                     <p>情報の更新は施設が逐一行っておりますが、<br>既に譲渡が決定してしまっている子がいる場合もありますので<br>ご了承ください。</p>
                 </div>
-                    {!! link_to_route('animals.index', 'わんにゃん一覧', []) !!}
+        @include('user.animal.box')
+
         </section>
 
         <section id="reservation">
