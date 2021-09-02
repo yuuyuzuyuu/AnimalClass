@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function show($id)
     {
         $center = Center::findOrFail($id);
-        
+
         return view('center.show', [
             'center' => $center,
         ]);
@@ -35,15 +35,25 @@ class HomeController extends Controller
     public function edit($id)
     {
         $center = Center::findOrFail($id);
-        
+
         return view('center.edit', [
-           'center' => $center, 
+           'center' => $center,
         ]);
     }
 
 
     public function update(Request $request, Center $center)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|max:255',
+            'tel' => 'required|max:11',
+            'postcode' => 'required|max:7',
+            'pref' => 'required',
+            'address' => 'required',
+            'password' => 'required|min:',
+        ]);
+        
         $center->name = $request->name;
         $center->email = $request->email;
         $center->password = bcrypt($request->password);

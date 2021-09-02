@@ -46,11 +46,11 @@ Route::group(['middleware' => ['auth:admin']], function() {
 Route::group(['prefix' => 'center'], function () {
   Route::get('signup', 'Center\Auth\RegisterController@showRegistrationForm')->name('center.signup.get');
   Route::post('signup', 'Center\Auth\RegisterController@register')->name('center.signup.post');
-  
+
   Route::get('login', 'Center\Auth\LoginController@showLoginForm')->name('center.login');
   Route::post('login', 'Center\Auth\LoginController@login')->name('center.login.post');
   Route::get('logout', 'Center\Auth\LoginController@logout')->name('center.logout.get');
-  
+
   Route::get('/animals/{animal}', 'AnimalsController@show')->name('animals.show')->middleware('auth:center');
 });
 

@@ -42,9 +42,9 @@
     </tr>
 
 </table>
-
-{!! link_to_route('center.edit', '編集', ['center' => $center->id], ['class' => 'btn btn-block']) !!}
-
+    @if(Auth::id('center') === $center->center_id)
+        {!! link_to_route('center.edit', '編集', ['center' => $center->id], ['class' => 'btn btn-block']) !!}
+    @endif
 <h3>▶予定</h3>
 
 @endsection

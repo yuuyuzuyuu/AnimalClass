@@ -38,6 +38,15 @@ class UsersController extends Controller
 
     public function update(Request $request, User $user)
     {
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|max255',
+            'password' => 'required|min:8',
+            'nickname' => 'required|max:12',
+            'tel' => 'required|max:11',
+            'pref' => 'required',
+        ]);    
+        
         $user_form = $request->all();
         $user = \Auth::user();
         unset($user_form['_token']);

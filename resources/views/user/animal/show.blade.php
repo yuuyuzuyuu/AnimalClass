@@ -21,13 +21,32 @@
                 なまえ：{{ $animal->name }}<br>
                 性別：{{ App\Enums\Gender::getDescription($animal->gender) }}<br>
                 年齢：{{ $animal->ageName }}<br>
-                種類：{{ $animal->typeName }}<br>
+                種類：
+                @if($animal->animal_type == 0)
+                    {{ $animal->CatsTypeName }}
+                @else
+                    {{ $animal->DogsTypeName }}
+                @endif
+                <br>
                 紹介：{{ $animal->introduction }}<br>
-                {!! link_to_route('animals.edit', '編集', ['animal' => $animal->id]) !!}
-                {!! Form::model($animal, ['route' => ['animals.destroy', $animal->id], 'method' => 'delete']) !!}
-                    {!! Form::submit('削除', ['class' => 'btn']) !!}
-                {!! Form::close() !!}
-            </div>
+                
+                @if(Auth::id('center') === $animal->center_id)
+                        <p class="text-right">{!! link_to_route('animals.edit', '編集', ['animal' => $animal->id]) !!}</p>
+                
+                    {!! Form::model($animal, ['route' => ['animals.destroy', $animal->id], 'method' => 'delete']) !!}
+                        {!! Form::submit('削除', ['class' => 'btn']) !!}
+                    {!! Form::close() !!}
+                @endif
+                </div>
+            
+            <a href="{{ route('center.show', ['center' => $animal->center->id])}}">
+                <div class="box">
+                    <p>施設情報</p>
+                    <p>施設：{{ $animal->center->name }}</p>
+                    <p>住所：{{ $animal->center->prefName }}{{ $animal->center->address }}</p>
+                    <p>電話：{{ $animal->center->tel }}</p>
+                </div>
+            </a>
         </div>
     </div>
 

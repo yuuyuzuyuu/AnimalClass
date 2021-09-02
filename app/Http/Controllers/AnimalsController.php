@@ -40,6 +40,22 @@ class AnimalsController extends Controller
     public function store(Request $request)
     {
         $center = \Auth::user('center');
+        
+        $request->validate([
+            'name' => 'required|max:20',
+            'age' => 'required',
+            'gender' => 'required',
+            'type' => 'required',
+            'animal_type' => 'required',
+            'introduction' => 'required|max:255',
+            'active_status' => 'required',
+        ]);
+        
+        if(isset($request->dog_type)) {
+            $request['type'] = $request->dog_type;
+        } else {
+            $request['type'] = $request->cat_type;
+        }
 
         if ($file = $request->image1) {
             $fileName = time() . $file->getClientOriginalName();
@@ -85,6 +101,7 @@ class AnimalsController extends Controller
     public function show($id)
     {
         $animal = Animal::findorFail($id);
+        $center = Center::find('center');
 
         return view('user.animal.show', [
             'animal' => $animal,
@@ -110,14 +127,29 @@ class AnimalsController extends Controller
     public function update(Request $request, $id)
     {
         $animal = Animal::findorFail($id);
-
+        
+        $request->validate([
+            'name' => 'required|max:20',
+            'age' => 'required',
+            'gender' => 'required',
+            'type' => 'required',
+            'animal_type' => 'required',
+            'introduction' => 'required|max:255',
+            'active_status' => 'required',
+        ]);
+        
+        if(isset($request->dog_type)) {
+            $request['type'] = $request->dog_type;
+        } else {
+            $request['type'] = $request->cat_type;
+        }
 
         if ($file = $request->image1) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads/');
             $file->move($target_path, $fileName);
         } else {
-            $fileName = "";
+            $fileName = $animal->image1;
         }
 
         if ($file = $request->image2) {
@@ -125,7 +157,7 @@ class AnimalsController extends Controller
             $target_path = public_path('uploads/');
             $file->move($target_path, $fileName2);
         } else {
-            $fileName2 = "";
+            $fileName2 = $animal->image2;
         }
 
         if ($file = $request->image3) {
@@ -133,7 +165,7 @@ class AnimalsController extends Controller
             $target_path = public_path('uploads/');
             $file->move($target_path, $fileName3);
         } else {
-            $fileName3 = "";
+            $fileName3 = $animal->image3;
         }
 
         $animal->name = $request->name;

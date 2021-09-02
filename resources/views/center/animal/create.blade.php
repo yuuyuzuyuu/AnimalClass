@@ -23,12 +23,12 @@
                     {!! Form::select('animal_type', $animal_type, null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('type', '種類(猫)') !!}
-                    {!! Form::select('type', Config::get('type.Cats'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
+                    {!! Form::label('cat_type', '種類(猫)') !!}
+                    {!! Form::select('cat_type', Config::get('type.Cats'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('type', '種類(犬)') !!}
-                    {!! Form::select('type', Config::get('type.Dogs'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
+                    {!! Form::label('dog_type', '種類(犬)') !!}
+                    {!! Form::select('dog_type', Config::get('type.Dogs'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('introduction', '紹介文') !!}
