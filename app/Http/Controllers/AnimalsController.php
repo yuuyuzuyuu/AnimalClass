@@ -41,6 +41,12 @@ class AnimalsController extends Controller
     {
         $center = \Auth::user('center');
         
+        if(isset($request->dog_type)) {
+            $request['type'] = $request->dog_type;
+        } else {
+            $request['type'] = $request->cat_type;
+        }
+
         $request->validate([
             'name' => 'required|max:20',
             'age' => 'required',
@@ -51,18 +57,12 @@ class AnimalsController extends Controller
             'active_status' => 'required',
         ]);
         
-        if(isset($request->dog_type)) {
-            $request['type'] = $request->dog_type;
-        } else {
-            $request['type'] = $request->cat_type;
-        }
-
         if ($file = $request->image1) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads/');
             $file->move($target_path, $fileName);
         } else {
-            $fileName = "";
+            $fileName = "default.png";
         }
 
         if ($file = $request->image2) {
@@ -128,6 +128,12 @@ class AnimalsController extends Controller
     {
         $animal = Animal::findorFail($id);
         
+        if(isset($request->dog_type)) {
+            $request['type'] = $request->dog_type;
+        } else {
+            $request['type'] = $request->cat_type;
+        }
+
         $request->validate([
             'name' => 'required|max:20',
             'age' => 'required',
@@ -138,12 +144,6 @@ class AnimalsController extends Controller
             'active_status' => 'required',
         ]);
         
-        if(isset($request->dog_type)) {
-            $request['type'] = $request->dog_type;
-        } else {
-            $request['type'] = $request->cat_type;
-        }
-
         if ($file = $request->image1) {
             $fileName = time() . $file->getClientOriginalName();
             $target_path = public_path('uploads/');

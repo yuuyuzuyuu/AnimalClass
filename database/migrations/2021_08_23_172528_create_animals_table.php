@@ -19,7 +19,7 @@ class CreateAnimalsTable extends Migration
         Schema::create('animals', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('center_id');
-            $table->string('image1')->nullable();
+            $table->string('image1')->default('/uploads/default.png');
             $table->string('image2')->nullable();
             $table->string('image3')->nullable();
             $table->string('name');
@@ -32,7 +32,6 @@ class CreateAnimalsTable extends Migration
             $table->timestamps();
             
             $table->foreign('center_id')->references('id')->on('centers');
-            
         });
     }
 
