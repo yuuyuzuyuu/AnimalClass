@@ -2,6 +2,17 @@
 
 @section('content')
     <div class="user-top">
+        
+        <div class="text-center">
+            @if (Auth::guard('user')->check())
+                <a href='/'><img src="/images/logo.png"></a>
+            @elseif (Auth::guard('center')->check())
+                <a href='/animals/create'><img src="/images/logo.png"></a>
+            @else
+                <a href='/'><img src="/images/logo.png"></a>
+            @endif
+        </div>
+        
         <ul id="page-link">
             <li><a href="#top">TOP</a></li>
             <li><a href="#about">ABOUT</a></li>
@@ -39,11 +50,11 @@
         <section id="dogsandcats">
             <div class="top-title text-center">Dogs and Cats</div>
                 <div class="text-center">
-                    <p>現在、施設でお預かりしている子たちです。</p>
+                    <p>現在、各施設でお預かりしている子たちです。</p>
                     <p>情報の更新は施設が逐一行っておりますが、<br>既に譲渡が決定してしまっている子がいる場合もありますので<br>ご了承ください。</p>
                 </div>
         @include('user.animal.box')
-
+        <div class="text-right">{!! link_to_route('animals.index', 'もっと見る', [], ['class' => 'btn']) !!}</div>
         </section>
 
         <section id="reservation">

@@ -12,12 +12,12 @@
 */
 
 Route::get('/', 'User\UsersController@index');
-
 Route::get('/animals', 'AnimalsController@index')->name('animals.index');
 
 // ユーザ
 Route::group(['middleware' => ['auth:user']], function() {
   Route::resource('user', 'User\UsersController');
+  Route::resource('animals', 'AnimalsController', ['only' => ['show']]);
 });
 
 Route::get('signup', 'User\Auth\RegisterController@showRegistrationForm')->name('signup.get');
@@ -26,10 +26,6 @@ Route::post('signup', 'User\Auth\RegisterController@register')->name('signup.pos
 Route::get('login', 'User\Auth\LoginController@showLoginForm')->name('user.login');
 Route::post('login', 'User\Auth\LoginController@login')->name('user.login.post');
 Route::get('logout', 'User\Auth\LoginController@logout')->name('user.logout.get');
-
-Route::group(['prefix' => 'user'], function () {
-  Route::get('/animals/{animal}', 'AnimalsController@show')->name('animals.show')->middleware('auth:user');
-});
 
 // 管理者
 Route::prefix('admin')->group(function() {
@@ -50,12 +46,10 @@ Route::group(['prefix' => 'center'], function () {
   Route::get('login', 'Center\Auth\LoginController@showLoginForm')->name('center.login');
   Route::post('login', 'Center\Auth\LoginController@login')->name('center.login.post');
   Route::get('logout', 'Center\Auth\LoginController@logout')->name('center.logout.get');
-
-  Route::get('/animals/{animal}', 'AnimalsController@show')->name('animals.show')->middleware('auth:center');
 });
 
 Route::group(['middleware' => ['auth:center']], function() {
   Route::resource('center', 'Center\HomeController');
-  Route::resource('animals', 'AnimalsController', ['only' => ['create', 'store', 'destroy', 'edit', 'update']]);
+  Route::resource('animals', 'AnimalsController', ['only' => ['create', 'store', 'destroy', 'edit', 'update', 'show']]);
   Route::resource('informations', 'InformationsController', ['only' => ['store', 'destroy']]);
 });

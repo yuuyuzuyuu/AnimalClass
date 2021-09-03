@@ -31,10 +31,10 @@
                 @endif
                 <br>
                 紹介：{{ $animal->introduction }}<br>
+                募集情報：{{ App\Enums\ActiveStatus::getDescription($animal->active_status) }}<br>
 
                 @if(Auth::id('center') === $animal->center_id)
-                        <p class="text-right">{!! link_to_route('animals.edit', '編集', ['animal' => $animal->id]) !!}</p>
-
+                    {!! link_to_route('animals.edit', '編集', ['animal' => $animal->id], ['class' => 'btn']) !!}
                     {!! Form::model($animal, ['route' => ['animals.destroy', $animal->id], 'method' => 'delete']) !!}
                         {!! Form::submit('削除', ['class' => 'btn']) !!}
                     {!! Form::close() !!}

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Information extends Model
 {
@@ -19,4 +20,6 @@ class Information extends Model
     {
         return $this->belongsTo(Animal::class);
     }
+    
+    
 }

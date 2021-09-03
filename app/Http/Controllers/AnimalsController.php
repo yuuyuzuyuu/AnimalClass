@@ -11,6 +11,7 @@ use App\Models\Information;
 use App\Enums\Gender;
 use App\Enums\ActiveStatus;
 use App\Enums\AnimalType;
+use Carbon\Carbon;
 
 class AnimalsController extends Controller
 {
@@ -105,6 +106,8 @@ class AnimalsController extends Controller
         $center = Center::find('center');
         $information = Information::find('information');
         $informations = $animal->informations();
+
+        $carbon = new Carbon();
 
         return view('user.animal.show', [
             'animal' => $animal,
