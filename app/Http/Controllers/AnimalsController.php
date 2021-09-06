@@ -147,27 +147,27 @@ class AnimalsController extends Controller
             'introduction' => 'required|max:255',
             'active_status' => 'required',
         ]);
-
-        if ($file = $request->image1) {
+        
+        if ($file = $request->file('image1')) {
             $fileName = time() . $file->getClientOriginalName();
-            $target_path = public_path('uploads/');
-            $file->move($target_path, $fileName);
+            $path = Storage::disk('s3')->putFile('/', $file, 'public');
+            $fileName = Storage::disk('s3')->url($path);
         } else {
             $fileName = $animal->image1;
         }
 
-        if ($file = $request->image2) {
+        if ($file = $request->file('image2')) {
             $fileName2 = time() . $file->getClientOriginalName();
-            $target_path = public_path('uploads/');
-            $file->move($target_path, $fileName2);
+            $path = Storage::disk('s3')->putFile('/', $file, 'public');
+            $fileName2 = Storage::disk('s3')->url($path);
         } else {
             $fileName2 = $animal->image2;
         }
 
-        if ($file = $request->image3) {
+        if ($file = $request->file('image3')) {
             $fileName3 = time() . $file->getClientOriginalName();
-            $target_path = public_path('uploads/');
-            $file->move($target_path, $fileName3);
+            $path = Storage::disk('s3')->putFile('/', $file, 'public');
+            $fileName3 = Storage::disk('s3')->url($path);
         } else {
             $fileName3 = $animal->image3;
         }
