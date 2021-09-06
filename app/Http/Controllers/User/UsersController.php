@@ -9,33 +9,36 @@ use App\Models\Animal;
 
 class UsersController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:user');
-    // }
-    
+    public function __construct()
+    {
+        $this->middleware('auth:user')
+            ->except(['index']);
+    }
+
     public function index()
     {
         $animals = Animal::orderBy('created_at', 'desc')->take(4)->get();
-        
+
         return view('user.welcome', [
             'animals' => $animals,
         ]);
     }
-    
+
     public function show($id)
     {
         $user = User::findOrFail($id);
-        
+        $animals = $user->favorites()->paginate(10);
+
         return view('user.show', [
-            'user' => $user, 
+            'user' => $user,
+            'animals' => $animals,
         ]);
     }
 
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        
+
         return view('user.edit', [
             'user' => $user,
         ]);
@@ -50,8 +53,8 @@ class UsersController extends Controller
             'nickname' => 'required|max:12',
             'tel' => 'required|max:11',
             'pref' => 'required',
-        ]);    
-        
+        ]);
+
         $user_form = $request->all();
         $user = \Auth::user();
         unset($user_form['_token']);

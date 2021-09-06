@@ -1,11 +1,9 @@
 @extends('user/layouts.app')
 
 @section('content')
-    <h1>animal index</h1>
+    <div class="second-title">わんにゃん一覧</div>
 
     <div class="row">
         @include('user.animal.box')
     </div>
-
-
 @endsection

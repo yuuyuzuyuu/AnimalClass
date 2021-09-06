@@ -5,30 +5,24 @@ namespace App\Http\Controllers\Center;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Center;
+use App\Models\Animal;
 
 class HomeController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:center');
+        $this->middleware('auth:center')
+            ->except(['show']);
     }
 
-    public function create()
+    public function show(Center $center)
     {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        $center = Center::findOrFail($id);
+        $center = Center::findOrFail($center->id);
+        $animals = Animal::where('center_id', $center->id)->get();
 
         return view('center.show', [
             'center' => $center,
+            'animals' => $animals,
         ]);
     }
 
@@ -67,10 +61,5 @@ class HomeController extends Controller
         $center->facebook = $request->facebook;
         $center->save();
         return redirect('center/'.$center->id);
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

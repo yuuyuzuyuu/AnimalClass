@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="text-center">
-        <h1>会員登録</h1>
+        <div class="second-title">会員登録</div>
         <p>*がついている欄は必須項目です。</p>
     </div>
 

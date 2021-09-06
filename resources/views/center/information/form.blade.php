@@ -1,4 +1,4 @@
-@if(Auth::id('center') == $animal->center_id)
+@if(Auth::id('center') == $animal->center_id && Auth::guard('center')->check())
 {!! Form::open(['route' => 'informations.store']) !!}
     <div class="information-form">
         {!! Form::hidden('animal_id',$animal->id) !!}

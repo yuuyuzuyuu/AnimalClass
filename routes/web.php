@@ -15,17 +15,21 @@ Route::get('/', 'User\UsersController@index');
 Route::get('/animals', 'AnimalsController@index')->name('animals.index');
 
 // ユーザ
-Route::group(['middleware' => ['auth:user']], function() {
-  Route::resource('user', 'User\UsersController');
-  Route::resource('animals', 'AnimalsController', ['only' => ['show']]);
-});
-
 Route::get('signup', 'User\Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'User\Auth\RegisterController@register')->name('signup.post');
 
 Route::get('login', 'User\Auth\LoginController@showLoginForm')->name('user.login');
 Route::post('login', 'User\Auth\LoginController@login')->name('user.login.post');
 Route::get('logout', 'User\Auth\LoginController@logout')->name('user.logout.get');
+
+Route::group(['middleware' => ['auth:user']], function() {
+  Route::group(['prefix'=>'animals/{id}'], function() {
+    Route::post('favorite', 'FavoritesController@store')->name('favorites.favorite');
+    Route::delete('unfavorite', 'FavoritesController@destroy')->name('favorites.unfavorite');
+  });
+  Route::resource('user', 'User\UsersController');
+  Route::get('/user/{id}/animals', 'AnimalsController@show')->name('user.animals.show');
+});
 
 // 管理者
 Route::prefix('admin')->group(function() {
@@ -49,7 +53,9 @@ Route::group(['prefix' => 'center'], function () {
 });
 
 Route::group(['middleware' => ['auth:center']], function() {
-  Route::resource('center', 'Center\HomeController');
-  Route::resource('animals', 'AnimalsController', ['only' => ['create', 'store', 'destroy', 'edit', 'update', 'show']]);
-  Route::resource('informations', 'InformationsController', ['only' => ['store', 'destroy']]);
+  Route::resource('center', 'Center\HomeController', ['only' => ['edit', 'update', 'show']]);
+  Route::group(['prefix' => 'center'], function () {
+    Route::resource('animals', 'AnimalsController', ['only' => ['create', 'store', 'destroy', 'edit', 'update', 'show']]);
+    Route::resource('informations', 'InformationsController', ['only' => ['store', 'destroy']]);
+  });
 });

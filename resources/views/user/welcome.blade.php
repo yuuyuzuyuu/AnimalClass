@@ -3,16 +3,6 @@
 @section('content')
     <div class="user-top">
         
-        <div class="text-center">
-            @if (Auth::guard('user')->check())
-                <a href='/'><img src="/images/logo.png"></a>
-            @elseif (Auth::guard('center')->check())
-                <a href='/animals/create'><img src="/images/logo.png"></a>
-            @else
-                <a href='/'><img src="/images/logo.png"></a>
-            @endif
-        </div>
-        
         <ul id="page-link">
             <li><a href="#top">TOP</a></li>
             <li><a href="#about">ABOUT</a></li>
@@ -92,6 +82,5 @@
                 </div>
         </section>
     </div>
-
 
 @endsection

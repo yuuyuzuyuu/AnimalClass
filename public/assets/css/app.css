@@ -4,13 +4,30 @@ body {
     /*font-family: 'Sawarabi Gothic', sans-serif;*/
 }
 
-a {
+a, a:hover, a:visited {
     color: #333;
     text-decoration: none;
 }
 
 footer {
     margin: 100px;
+}
+
+img {
+    border-radius: 20px;
+}
+
+.logo {
+    padding-bottom: 50px;
+    padding-top: 20px;
+}
+
+.btn {
+    background-color: #E7D4B5;
+}
+
+.btn:hover {
+    background-color: #A0937D;
 }
 
 /*userトップページ*/
@@ -22,6 +39,12 @@ footer {
     font-size: 60px;
     color: #A0937D;
     margin-bottom: 20px;
+}
+
+.second-title {
+    font-size: 40px;
+    color: #A0937D;
+    margin: 20px 0;
 }
 
 .user-top p {
@@ -110,6 +133,13 @@ footer {
 }
 
 /*わんにゃん詳細*/
+.show-box {
+    padding: 20px;
+    margin: 20px;
+    background-color: #E7D4B5;
+    border-radius: 10px;
+}
+
 .information-box {
     position: relative;
     padding: 0.5em 0.7em;
@@ -142,4 +172,23 @@ footer {
 .information-time {
     text-align: right;
     font-size: 12px;
+}
+
+.information-box .btn {
+    background-color: #A0937D;
+}
+
+.information-box .btn:hover {
+    background-color: #E7D4B5;
+}
+
+/*マイページ*/
+.mypage {
+    padding: 30px;
+    background-color: #E7D4B5;
+    border-radius: 20px;
+}
+
+.center-animal-index {
+    padding-top: 40px;
 }

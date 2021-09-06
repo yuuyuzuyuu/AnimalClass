@@ -33,4 +33,10 @@ class Animal extends Model
     public function getAgeNameAttribute() {
         return config('age.'.$this->age);
     }
+    
+    // いいねしているユーザの取得
+    public function favorite_users()
+    {
+        return $this->belongsToMany(User::class, 'favorites', 'animal_id', 'user_id')->withTimestamps();
+    }
 }

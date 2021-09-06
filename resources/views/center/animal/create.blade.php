@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>NEW animal</h1>
+    <div class="second-title">NEW animal</div>
 
     <div class="row">
             {!! Form::model($animal, ['route' => 'animals.store', 'files' => true]) !!}

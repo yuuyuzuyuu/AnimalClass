@@ -40,8 +40,46 @@ class User extends Authenticatable
     public function getPrefNameAttribute() {
         return config('pref.'.$this->pref);
     }
-    
+
     public static $editRules = array (
         'password' => 'comfirmed'
     );
+
+    // Userクラスがfavoritesテーブルを通してAnimalクラスとつながっている
+    public function favorites()
+    {
+        return $this->belongsToMany(Animal::class, 'favorites', 'user_id', 'animal_id')->withTimestamps();
+    }
+
+    // いいねをつける
+    public function favorite($animalId)
+    {
+        $exist = $this->is_favorite($animalId);
+
+        if($exist) {
+            return false;
+        } else {
+            $this->favorites()->attach($animalId);
+            return true;
+        }
+    }
+
+    // いいねを外す
+    public function unfavorite($animalId)
+    {
+        $exist = $this->is_favorite($animalId);
+
+        if($exist) {
+            $this->favorites()->detach($animalId);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // すでにいいねしているか？
+    public function is_favorite($animalId)
+    {
+        return $this->favorites()->where('animal_id', $animalId)->exists();
+    }
 }

@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="text-center">
-        <h1>ログイン(施設用)</h1>
+        <div class="second-title">ログイン(施設用)</div>
     </div>
 
     <div class="row">

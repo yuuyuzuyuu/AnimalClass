@@ -2,7 +2,7 @@
 
 @section('content')
 
-編集ページ
+<div class="second-title">編集</div>
 
 <div class="row">
             {!! Form::model($animal, ['route' => ['animals.update', $animal->id], 'files' => true, 'method' => 'put']) !!}

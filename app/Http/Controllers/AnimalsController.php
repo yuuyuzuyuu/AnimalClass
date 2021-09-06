@@ -111,6 +111,7 @@ class AnimalsController extends Controller
 
         return view('user.animal.show', [
             'animal' => $animal,
+            'center' => $center,
             'information' => $information,
             'informations' => $informations,
         ]);

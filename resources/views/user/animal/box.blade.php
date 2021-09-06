@@ -1,6 +1,10 @@
 <div class="animal-index">
     @foreach ($animals as $animal)
+    @if (Auth::guard('center')->check())
         <a href="{{ route('animals.show', ['animal' => $animal->id])}}">
+    @elseif(Auth::guard('user')->check())
+        <a href="{{ route('user.animals.show', ['id' => $animal->id])}}">
+    @endif
             <div class="box">
             	<img src="/uploads/{{ $animal->image1 }}" width="250px">
                     @if($animal->animal_type == 0 && $animal->gender == 0)
