@@ -65,7 +65,7 @@ class AnimalsController extends Controller
             $path = Storage::disk('s3')->putFile('/', $file, 'public');
             $fileName = Storage::disk('s3')->url($path);
         } else {
-            $fileName = "default.png";
+            $fileName = "/images/default.png";
         }
 
         if ($file = $request->file('image2')) {
