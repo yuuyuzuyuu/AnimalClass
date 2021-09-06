@@ -104,13 +104,11 @@ class AnimalsController extends Controller
     public function show($id)
     {
         $animal = Animal::findOrFail($id);
-        $informations = Information::find('information');
 
         $carbon = new Carbon();
 
         return view('user.animal.show', [
             'animal' => $animal,
-            'informations' => $informations,
         ]);
     }
 
