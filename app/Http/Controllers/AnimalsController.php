@@ -61,26 +61,25 @@ class AnimalsController extends Controller
         ]);
 
         if ($file = $request->file('image1')) {
-            // $fileName = time() . $file->getClientOriginalName();
-            // $target_path = public_path('uploads/');
-            // $file->move($target_path, $fileName);
-            $path = Storage::disk('s3')->put('/', $file, 'public');
+            $fileName = time() . $file->getClientOriginalName();
+            $path = Storage::disk('s3')->putFile('/', $file, 'public');
+            $fileName = Storage::disk('s3')->url($path);
         } else {
             $fileName = "default.png";
         }
 
-        if ($file = $request->image2) {
+        if ($file = $request->file('image2')) {
             $fileName2 = time() . $file->getClientOriginalName();
-            $target_path = public_path('uploads/');
-            $file->move($target_path, $fileName2);
+            $path = Storage::disk('s3')->putFile('/', $file, 'public');
+            $fileName2 = Storage::disk('s3')->url($path);
         } else {
             $fileName2 = "";
         }
 
-        if ($file = $request->image3) {
-            $fileName3 = time() . $file->getClientOriginalName();
-            $target_path = public_path('uploads/');
-            $file->move($target_path, $fileName3);
+        if ($file = $request->file('image3')) {
+            $fileName2 = time() . $file->getClientOriginalName();
+            $path = Storage::disk('s3')->putFile('/', $file, 'public');
+            $fileName3 = Storage::disk('s3')->url($path);
         } else {
             $fileName3 = "";
         }
@@ -104,8 +103,7 @@ class AnimalsController extends Controller
 
     public function show($id)
     {
-        $animal = Animal::findorFail($id);
-        $center = Center::find('center');
+        $animal = Animal::findOrFail($id);
         $information = Information::find('information');
         $informations = $animal->informations();
 
@@ -113,7 +111,6 @@ class AnimalsController extends Controller
 
         return view('user.animal.show', [
             'animal' => $animal,
-            'center' => $center,
             'information' => $information,
             'informations' => $informations,
         ]);
@@ -121,7 +118,7 @@ class AnimalsController extends Controller
 
     public function edit($id)
     {
-        $animal = Animal::findorFail($id);
+        $animal = Animal::findOrFail($id);
 
         $gender = Gender::toselectArray();
         $animal_type = AnimalType::toselectArray();
@@ -137,7 +134,7 @@ class AnimalsController extends Controller
 
     public function update(Request $request, $id)
     {
-        $animal = Animal::findorFail($id);
+        $animal = Animal::findOrFail($id);
 
         if(isset($request->dog_type)) {
             $request['type'] = $request->dog_type;
@@ -196,7 +193,7 @@ class AnimalsController extends Controller
 
     public function destroy($id)
     {
-        $animal = Animal::findorFail($id);
+        $animal = Animal::findOrFail($id);
         $animal->delete();
 
         return redirect('/animals');

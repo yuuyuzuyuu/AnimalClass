@@ -5,13 +5,13 @@
         <div class="col-md-6">
             <div class="animal-show">
                 @if($animal->image1)
-                    <img src="/uploads/{{ $animal->image1 }}" width="500px"><br>
+                    <img src="{{ $animal->image1 }}" width="500px"><br>
                 @endif
                 @if($animal->image2)
-                    <img src="/uploads/{{ $animal->image2 }}" width="500px"><br>
+                    <img src="{{ $animal->image2 }}" width="500px"><br>
                 @endif
                 @if($animal->image3)
-                    <img src="/uploads/{{ $animal->image3 }}" width="500px"><br>
+                    <img src="{{ $animal->image3 }}" width="500px"><br>
                 @endif
             </div>
             @if(Auth::guard('user')->check())
@@ -98,7 +98,5 @@
             <div class="button text-right">{!! link_to_route('animals.index', 'BACK') !!}</div>
         </div>
     </div>
-
-
 
 @endsection
