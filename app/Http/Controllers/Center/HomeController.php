@@ -15,9 +15,9 @@ class HomeController extends Controller
             ->except(['show']);
     }
 
-    public function show(Center $center)
+    public function show($id)
     {
-        $center = Center::findOrFail($center->id);
+        $center = Center::findOrFail($id);
         $animals = Animal::where('center_id', $center->id)->get();
 
         return view('center.show', [

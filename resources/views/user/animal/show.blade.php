@@ -65,32 +65,36 @@
                 @endif
                 </div>
 
-            <a href="{{ route('center.show', ['center' => $animal->center->id])}}">
                 <div class="show-box">
-                    <table class="table table-borderless">
-                        <h4 class="text-center text-white"><i class="fas fa-home"></i>施設情報</h4>
-                        <tr>
-                            <th>施設</th>
-                            <td>{{ $animal->center->name }}</td>
-                        </tr>
-                        <tr>
-                            <th>住所</th>
-                            <td>
-                                〒{{ $animal->center->postcode }}<br>
-                                {{ $animal->center->prefName }}{{ $animal->center->address }}
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>電話</th>
-                            <td>{{ $animal->center->tel }}</td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                    </table>
+                    @if (Auth::guard('center')->check())
+                        <a href="{{ route('center.show', ['center' => $animal->center->id])}}">
+                    @elseif (Auth::guard('user')->check())
+                        <a href="{{ route('user.center.show', ['id' => $animal->center->id])}}">
+                    @endif
+                        <table class="table table-borderless">
+                            <h4 class="text-center text-white"><i class="fas fa-home"></i>施設情報</h4>
+                            <tr>
+                                <th>施設</th>
+                                <td>{{ $animal->center->name }}</td>
+                            </tr>
+                            <tr>
+                                <th>住所</th>
+                                <td>
+                                    〒{{ $animal->center->postcode }}<br>
+                                    {{ $animal->center->prefName }}{{ $animal->center->address }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>電話</th>
+                                <td>{{ $animal->center->tel }}</td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </a>
                 </div>
-            </a>
             <div class="button text-right">{!! link_to_route('animals.index', 'BACK') !!}</div>
         </div>
     </div>

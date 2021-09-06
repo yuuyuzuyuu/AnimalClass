@@ -29,7 +29,10 @@ Route::group(['middleware' => ['auth:user']], function() {
   });
   Route::resource('user', 'User\UsersController');
   Route::get('/user/{id}/animals', 'AnimalsController@show')->name('user.animals.show');
+  // Route::resource('user/center', 'Center\HomeController', ['only' => ['show']])->name('user.center.show');
+  Route::get('/user/center/{id}', 'Center\HomeController@show')->name('user.center.show');
 });
+
 
 // 管理者
 Route::prefix('admin')->group(function() {

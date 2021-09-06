@@ -40,8 +40,10 @@
         </tr>
 
     </table>
-        @if(Auth::id('center') === $center->id)
-            {!! link_to_route('center.edit', '編集', ['center' => $center->id], ['class' => 'btn btn-block']) !!}
+        @if (Auth::guard('center')->check())
+            @if(Auth::id() === $center->id)
+                {!! link_to_route('center.edit', '編集', ['center' => $center->id], ['class' => 'btn btn-block']) !!}
+            @endif
         @endif
     </div>
 

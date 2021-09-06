@@ -12,6 +12,7 @@ use App\Enums\Gender;
 use App\Enums\ActiveStatus;
 use App\Enums\AnimalType;
 use Carbon\Carbon;
+use Storage;
 
 class AnimalsController extends Controller
 {
@@ -59,10 +60,11 @@ class AnimalsController extends Controller
             'active_status' => 'required',
         ]);
 
-        if ($file = $request->image1) {
-            $fileName = time() . $file->getClientOriginalName();
-            $target_path = public_path('uploads/');
-            $file->move($target_path, $fileName);
+        if ($file = $request->file('image1')) {
+            // $fileName = time() . $file->getClientOriginalName();
+            // $target_path = public_path('uploads/');
+            // $file->move($target_path, $fileName);
+            $path = Storage::disk('s3')->put('/', $file, 'public');
         } else {
             $fileName = "default.png";
         }
