@@ -105,14 +105,12 @@ class AnimalsController extends Controller
     {
         $animal = Animal::findOrFail($id);
         $information = Information::find('information');
-        $informations = $animal->informations();
 
         $carbon = new Carbon();
 
         return view('user.animal.show', [
             'animal' => $animal,
             'information' => $information,
-            'informations' => $informations,
         ]);
     }
 
