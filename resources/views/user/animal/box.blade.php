@@ -5,8 +5,10 @@
         <a href="{{ route('user.animals.show', ['id' => $animal->id])}}">
     @endif
             <div class="box">
-            	<img src="{{ $animal->image1 }}" width="250px">
                 @if($animal->active_status == 1)
+            	    <img src="{{ $animal->image1 }}" width="250px">
+            	@elseif($animal->active_status == 0)
+            	    <img src="{{ $animal->image1 }}" width="250px">
             	    <p>募集終了</p>
             	@endif
                     @if($animal->animal_type == 0 && $animal->gender == 0)
