@@ -4,7 +4,6 @@
 <div class="mypage">
     <p class="top-title"><i class="fas fa-paw"></i>{{ $center -> name }}</p>
     <table class="table table-borderless">
-
         <tr>
             <th>電話番号</th>
             <td>{{ $center -> tel }}</td>
@@ -38,17 +37,18 @@
                 @endif
             </td>
         </tr>
-
     </table>
-        @if (Auth::guard('center')->check())
-            @if(Auth::id() === $center->id)
-                {!! link_to_route('center.edit', '編集', ['center' => $center->id], ['class' => 'btn btn-block']) !!}
-            @endif
+    @if (Auth::guard('center')->check())
+        @if(Auth::id() === $center->id)
+            {!! link_to_route('center.edit', '編集', ['center' => $center->id], ['class' => 'btn btn-block']) !!}
         @endif
-    </div>
+    @endif
 
-    <div class="center-animal-index">
-        <div class="second-title">この施設のわんにゃん</div>
-            @include('user.animal.box')
+    <div class="second-title"><i class="fas fa-gift"></i>この施設のわんにゃん</div>
+    
+    <div class="animal-index">
+        @include('user.animal.box')
+        {{ $animals->links() }}
     </div>
+</div>
 @endsection

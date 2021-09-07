@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="mypage">
-    <div class="second-title">マイページ</div>
+    <div class="second-title"><i class="fas fa-paw"></i>マイページ</div>
     <table class="table table-borderless">
         <tr>
             <th>なまえ</th>

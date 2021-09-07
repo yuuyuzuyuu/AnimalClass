@@ -38,13 +38,17 @@
         </section>
 
         <section id="dogsandcats">
-            <div class="top-title text-center">Dogs and Cats</div>
-                <div class="text-center">
-                    <p>現在、各施設でお預かりしている子たちです。</p>
-                    <p>情報の更新は施設が逐一行っておりますが、<br>既に譲渡が決定してしまっている子がいる場合もありますので<br>ご了承ください。</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="top-title text-center">Dogs and Cats</div>
+                        <div class="text-center">
+                            <p>現在、各施設でお預かりしている子たちです。</p>
+                            <p>情報の更新は施設が逐一行っておりますが、<br>既に譲渡が決定してしまっている子がいる場合もありますので<br>ご了承ください。</p>
+                        </div>
+                    @include('user.animal.box')
+                    <div class="text-right">{!! link_to_route('animals.index', 'もっと見る', [], ['class' => 'btn']) !!}</div>
                 </div>
-        @include('user.animal.box')
-        <div class="text-right">{!! link_to_route('animals.index', 'もっと見る', [], ['class' => 'btn']) !!}</div>
+            </div>
         </section>
 
         <section id="reservation">

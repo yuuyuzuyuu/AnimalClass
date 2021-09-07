@@ -4,6 +4,9 @@
     <div class="second-title">わんにゃん一覧</div>
 
     <div class="row">
-        @include('user.animal.box')
+        <div class="animal-index">
+            @include('user.animal.box')
+            {{ $animals->links() }}
+        </div>
     </div>
 @endsection
