@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="mypage">
-    <p class="top-title"><i class="fas fa-paw"></i>{{ $center -> name }}</p>
+    <p class="second-title"><i class="fas fa-paw"></i>{{ $center -> name }}</p>
     <table class="table table-borderless">
         <tr>
             <th>電話番号</th>

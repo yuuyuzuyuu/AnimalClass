@@ -1,7 +1,7 @@
 /*全体*/
 @font-face {
     font-family: Font;
-    src: url("/fonts/NotoSansCJKjp-Thin.otf") format("truetype");
+    src: url("/fonts/NotoSansCJKjp-Light.otf") format("truetype");
 }
 
 body {
