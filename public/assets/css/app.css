@@ -283,3 +283,7 @@ img {
     background-color: #E7D4B5;
     border-radius: 20px;
 }
+
+.mypage-content:first-child {
+    padding-bottom: 60px;
+}
