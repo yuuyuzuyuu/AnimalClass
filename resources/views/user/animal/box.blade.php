@@ -20,4 +20,5 @@
                 </div>
             </a>
     @endforeach
+    {{ $animals->links() }}
 </div>

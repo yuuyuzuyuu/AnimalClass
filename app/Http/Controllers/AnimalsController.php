@@ -18,7 +18,7 @@ class AnimalsController extends Controller
 {
     public function index()
     {
-        $animals = Animal::all();
+        $animals = Animal::paginate(8);
 
         return view('user.animal.index', [
           'animals' => $animals,
