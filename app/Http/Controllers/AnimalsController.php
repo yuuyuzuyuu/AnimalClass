@@ -84,6 +84,8 @@ class AnimalsController extends Controller
             $fileName3 = "";
         }
 
+        dd($request->all());
+
         $animal = new Animal;
         $animal->image1 = $fileName;
         $animal->image2 = $fileName2;
@@ -147,7 +149,7 @@ class AnimalsController extends Controller
             'introduction' => 'required|max:255',
             'active_status' => 'required',
         ]);
-        
+
         if ($file = $request->file('image1')) {
             $fileName = time() . $file->getClientOriginalName();
             $path = Storage::disk('s3')->putFile('/', $file, 'public');
