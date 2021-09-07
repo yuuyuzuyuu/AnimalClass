@@ -1,7 +1,12 @@
 /*全体*/
+@font-face {
+    font-family: Font;
+    src: url("/fonts/NotoSansCJKjp-Thin.otf") format("truetype");
+}
+
 body {
     background-color: #F6E6CB;
-    /*font-family: 'Sawarabi Gothic', sans-serif;*/
+    font-family: Font;
 }
 
 a, a:hover, a:visited {
