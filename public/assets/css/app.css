@@ -76,6 +76,61 @@ img {
     text-decoration: none;
 }
 
+/*ページトップ*/
+#page-top a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3CDC1;
+    border-radius: 50px;
+    width: 70px;
+    height: 70px;
+    color: white;
+    transition:all 0.3s;
+}
+
+#page-top a:hover {
+    background-color: #CCB8AD;
+}
+
+#page-top {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+#page-top.UpMove {
+    animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#page-top.DownMove {
+    animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(100px);
+    }
+}
+
 /*ログイン・会員登録ページ*/
 .caution {
     position: relative;
@@ -136,7 +191,7 @@ img {
     padding: 10px 10px;
     line-height: 1;
     font-size: 20px;
-    top: 50%;
+    top: 45%;
     left: 50%;
     -ms-transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
@@ -202,6 +257,18 @@ img {
 }
 
 .information-box .btn:hover {
+    background-color: #E7D4B5;
+}
+
+.f-btn {
+    font-size: 20px;
+    border-radius: 50px;
+    background-color: #F6E6CB;
+}
+
+.f-btn:hover {
+    font-size: 20px;
+    border-radius: 50px;
     background-color: #E7D4B5;
 }
 
