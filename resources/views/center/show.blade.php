@@ -46,13 +46,11 @@
         @endif
     </div>
     
-    <div class="mypage-content">
         <div class="second-title"><i class="fas fa-gift"></i>この施設のわんにゃん</div>
         <div class="animal-index">
             @include('user.animal.box')
             {{ $animals->links() }}
         </div>
-    </div>
 
 </div>
 @endsection
