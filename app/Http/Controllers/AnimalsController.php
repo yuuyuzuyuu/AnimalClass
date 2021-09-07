@@ -16,12 +16,34 @@ use Storage;
 
 class AnimalsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $animals = Animal::paginate(8);
+        $query = Animal::query();
+        $gender = Gender::toselectArray();
+        $animal_type = AnimalType::toselectArray();
 
+        $search1 = $request->input('pref');
+        $search2 = $request->input('gender');
+        $search3 = $request->input('animal_type');
+        
+        if($request->has('pref') && $search1 != ('指定なし')) {
+            $query->where('pref', $search1)->get();
+        }
+        
+        if($request->has('gender') && $search2 != ('指定なし')) {
+            $query->where('gender', $search2)->get();
+        }
+        
+        if($request->has('animal_type') && $search3 != ('指定なし')) {
+            $query->where('animal_type', $search3)->get();
+        }
+        
+        $data = $query->paginate(8);
+        
         return view('user.animal.index', [
-          'animals' => $animals,
+            'data' => $data,
+            'gender' => $gender,
+            'animal_type' => $animal_type,
         ]);
     }
 

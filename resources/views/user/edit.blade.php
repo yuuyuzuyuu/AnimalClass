@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('tel', '電話番号（ハイフンは不要です）) !!}
+                    {!! Form::label('tel', '電話番号（ハイフンは不要です）') !!}
                     {!! Form::tel('tel', null, ['class' => 'form-control']) !!}
                 </div>
 
