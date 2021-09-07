@@ -58,9 +58,9 @@
                 </table>
 
                 @if(Auth::id('center') === $animal->center_id)
-                    {!! link_to_route('animals.edit', '編集', ['animal' => $animal->id], ['class' => 'btn']) !!}
+                    {!! link_to_route('animals.edit', '編集', ['animal' => $animal->id], ['class' => 'btn btn-block']) !!}
                     {!! Form::model($animal, ['route' => ['animals.destroy', $animal->id], 'method' => 'delete']) !!}
-                        {!! Form::submit('削除', ['class' => 'btn']) !!}
+                        {!! Form::submit('削除', ['class' => 'btn btn-block']) !!}
                     {!! Form::close() !!}
                 @endif
                 </div>

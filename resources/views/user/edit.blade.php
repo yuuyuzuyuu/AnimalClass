@@ -2,7 +2,8 @@
 
 @section('content')
     <div class="text-center">
-        <h1>編集</h1>
+        <div class="second-title">編集</div>
+        <p>*がついている欄は必須項目です。</p>
     </div>
 
     <div class="row">
@@ -10,37 +11,37 @@
 
             {!! Form::model($user, ['route' => ['user.update', $user->id], 'method' => 'put']) !!}
                 <div class="form-group">
-                    {!! Form::label('name', 'おなまえ') !!}
+                    {!! Form::label('name', 'おなまえ*') !!}
                     {!! Form::text('name', null, ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('nickname', 'ニックネーム') !!}
+                    {!! Form::label('nickname', 'ニックネーム*') !!}
                     {!! Form::text('nickname', null, ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('email', 'メールアドレス') !!}
+                    {!! Form::label('email', 'メールアドレス*') !!}
                     {!! Form::email('email', null, ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('tel', '電話番号（任意）') !!}
+                    {!! Form::label('tel', '電話番号（ハイフンは不要です）) !!}
                     {!! Form::tel('tel', null, ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('pref', '都道府県') !!}
+                    {!! Form::label('pref', '都道府県*') !!}
                     {!! Form::select('pref', Config::get('pref'), null, ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password', 'パスワード') !!}
+                    {!! Form::label('password', 'パスワード*') !!}
                     {!! Form::password('password', ['class' => 'form-control']) !!}
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('password_confirmation', 'パスワード（確認用）') !!}
+                    {!! Form::label('password_confirmation', 'パスワード（確認用）*') !!}
                     {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
 

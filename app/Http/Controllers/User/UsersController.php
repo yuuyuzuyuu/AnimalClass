@@ -49,9 +49,9 @@ class UsersController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'email' => 'required|max:255',
-            'password' => 'required|min:8',
-            'nickname' => 'required|max:12',
-            'tel' => 'required|max:11',
+            'password' => 'required|min:8|confirmed',
+            'nickname' => 'required|max:20',
+            'tel' => 'max:11',
             'pref' => 'required',
         ]);
 

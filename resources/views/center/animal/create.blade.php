@@ -2,9 +2,10 @@
 
 @section('content')
 
-    <div class="second-title">NEW animal</div>
 
     <div class="row">
+        <div class="animal-new">
+        <div class="second-title">NEW animal</div>
             {!! Form::model($animal, ['route' => 'animals.store', 'files' => true]) !!}
                 <div class="form-group">
                     {!! Form::label('name', 'なまえ') !!}
@@ -53,6 +54,7 @@
             {!! Form::submit('投稿', ['class' => 'btn btn-block']) !!}
 
             {!! Form::close() !!}
+        </div>
     </div>
 
 

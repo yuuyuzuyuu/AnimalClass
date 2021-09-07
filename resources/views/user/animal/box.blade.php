@@ -6,6 +6,9 @@
     @endif
             <div class="box">
             	<img src="{{ $animal->image1 }}" width="250px">
+                @if($animal->active_status == 1)
+            	    <p>募集終了</p>
+            	@endif
                     @if($animal->animal_type == 0 && $animal->gender == 0)
                         <i class="fas fa-cat fa-2x gender-boy"></i>
                     @elseif($animal->animal_type == 0 && $animal->gender == 1)

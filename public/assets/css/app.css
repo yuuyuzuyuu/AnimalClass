@@ -110,16 +110,39 @@ img {
 }
 
 .gender-boy {
-    color: #AEDEFC;
+    color: #39A2DB;
 }
 
 .box {
     width: 270px;
     display: inline-block;
+    position: relative;
     padding: 10px;
     margin-left: 4px;
     margin-bottom: 30px;
     background-color: #E7D4B5;
+    border-radius: 10px;
+}
+
+.animal-finish {
+    width: 100px;
+    height: 20px;
+    background-color: white;
+}
+
+.box p {
+    position: absolute;
+    background-color: rgba( 0, 0, 0, 0.5);
+    padding: 10px 10px;
+    line-height: 1;
+    font-size: 20px;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    color: white;
     border-radius: 10px;
 }
 
@@ -183,7 +206,7 @@ img {
 }
 
 /*マイページ*/
-.mypage {
+.mypage ,.animal-new{
     padding: 30px;
     background-color: #E7D4B5;
     border-radius: 20px;

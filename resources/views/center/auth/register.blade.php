@@ -28,12 +28,12 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('tel', '電話番号*') !!}
+                    {!! Form::label('tel', '電話番号（ハイフンは不要です）*') !!}
                     {!! Form::tel('tel', null, ['class' => 'form-control']) !!}
                 </div>
                 
                 <div class="form-group">
-                    {!! Form::label('postcode', '郵便番号*') !!}
+                    {!! Form::label('postcode', '郵便番号（ハイフンは不要です）*') !!}
                     {!! Form::tel('postcode', null, ['class' => 'form-control']) !!}
                 </div>
 
