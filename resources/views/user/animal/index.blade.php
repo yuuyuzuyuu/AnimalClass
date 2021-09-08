@@ -6,15 +6,15 @@
             <div class="search-box">
                 {!! Form::open(['route'=>'animals.index', 'method' => 'get']) !!}
                     <div class="form-group">
-                        {!! Form::label('gender', '性別：') !!}
+                        {!! Form::label('gender', '性別') !!}
                         {!! Form::select('gender', ['指定なし'=>'指定なし']+$gender, '指定なし', ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('animal_type', '犬か猫：') !!}
+                        {!! Form::label('animal_type', '犬か猫') !!}
                         {!! Form::select('animal_type', ['指定なし'=>'指定なし']+$animal_type, '指定なし', ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('pref', '都道府県：') !!}
+                        {!! Form::label('pref', '都道府県') !!}
                         {!! Form::select('pref', ['指定なし'=>'指定なし']+Config::get('pref'), '指定なし', ['class' => 'form-control']) !!}
                     </div>
                     {!! Form::submit('search', ['class' => 'btn btn-block']) !!}

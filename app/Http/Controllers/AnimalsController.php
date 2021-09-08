@@ -36,9 +36,15 @@ class AnimalsController extends Controller
         $search2 = $request->input('gender');
         $search3 = $request->input('animal_type');
 
+        // if($request->has('pref') && $search1 != ('指定なし')) {
+        //     $this->center->with('animals')->where('pref', $search1)->get();
+        // }
+
         if($request->has('pref') && $search1 != ('指定なし')) {
-            $this->center->with('animals')->where('pref', $search1)->get();
-        }
+            $animal->whereHas('center', function ($query) use ($search1) {
+               $query->where('pref', '=', $search1);
+            });
+        };
 
         if($request->has('gender') && $search2 != ('指定なし')) {
             $animal->where('gender', $search2)->get();
