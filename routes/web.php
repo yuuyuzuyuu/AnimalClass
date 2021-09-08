@@ -41,9 +41,13 @@ Route::prefix('admin')->group(function() {
   Route::get('logout', 'Admin\Auth\LoginController@logout')->name('admin.logout.get');
 });
 
-Route::group(['middleware' => ['auth:admin']], function() {
-  Route::resource('admin', 'Admin\HomeController');
+Route::get('admin', function() {
+  return view('admin.adminlte');
 });
+
+// Route::group(['middleware' => ['auth:admin']], function() {
+//   Route::resource('admin', 'Admin\HomeController');
+// });
 
 //センター
 Route::group(['prefix' => 'center'], function () {
