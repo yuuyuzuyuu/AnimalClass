@@ -82,11 +82,11 @@ class AnimalsController extends Controller
     {
         $center = \Auth::user('center');
 
-        // if(isset($request->dog_type)) {
-        //     $request['type'] = $request->dog_type;
-        // } else {
-        //     $request['type'] = $request->cat_type;
-        // }
+        if(isset($request->dog_type)) {
+            $request['type'] = $request->dog_type;
+        } else {
+            $request['type'] = $request->cat_type;
+        }
 
         $request->validate([
             'name' => 'required|max:20',
