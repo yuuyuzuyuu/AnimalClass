@@ -16,30 +16,40 @@ use Storage;
 
 class AnimalsController extends Controller
 {
+    private $animal;
+    private $center;
+
+    public function __construct(Animal $animal, Center $center)
+    {
+        $this->animal = $animal;
+        $this->center = $center;
+    }
+
     public function index(Request $request)
     {
-        $query = Animal::query();
+        $animal = Animal::query();
+
         $gender = Gender::toselectArray();
         $animal_type = AnimalType::toselectArray();
 
         $search1 = $request->input('pref');
         $search2 = $request->input('gender');
         $search3 = $request->input('animal_type');
-        
+
         if($request->has('pref') && $search1 != ('指定なし')) {
-            $query->where('pref', $search1)->get();
+            $this->center->with('animals')->where('pref', $search1)->get();
         }
-        
+
         if($request->has('gender') && $search2 != ('指定なし')) {
-            $query->where('gender', $search2)->get();
+            $animal->where('gender', $search2)->get();
         }
-        
+
         if($request->has('animal_type') && $search3 != ('指定なし')) {
-            $query->where('animal_type', $search3)->get();
+            $animal->where('animal_type', $search3)->get();
         }
-        
-        $data = $query->paginate(8);
-        
+
+        $data = $animal->orderBy('created_at', 'DESC')->paginate(8);
+
         return view('user.animal.index', [
             'data' => $data,
             'gender' => $gender,
@@ -66,17 +76,18 @@ class AnimalsController extends Controller
     {
         $center = \Auth::user('center');
 
-        if(isset($request->dog_type)) {
-            $request['type'] = $request->dog_type;
-        } else {
-            $request['type'] = $request->cat_type;
-        }
+        // if(isset($request->dog_type)) {
+        //     $request['type'] = $request->dog_type;
+        // } else {
+        //     $request['type'] = $request->cat_type;
+        // }
 
         $request->validate([
             'name' => 'required|max:20',
             'age' => 'required',
             'gender' => 'required',
-            'type' => 'required',
+            'dog_type' => 'nullable|required_without:cat_type',
+            'cat_type' => 'nullable|required_without:dog_type',
             'animal_type' => 'required',
             'introduction' => 'required|max:255',
             'active_status' => 'required',
@@ -106,7 +117,7 @@ class AnimalsController extends Controller
             $fileName3 = "";
         }
 
-        dd($request->all());
+        $request->all();
 
         $animal = new Animal;
         $animal->image1 = $fileName;
@@ -115,7 +126,8 @@ class AnimalsController extends Controller
         $animal->name = $request->name;
         $animal->age = $request->age;
         $animal->gender = $request->gender;
-        $animal->type = $request->type;
+        $animal->dog_type = $request->dog_type;
+        $animal->cat_type = $request->cat_type;
         $animal->animal_type = $request->animal_type;
         $animal->introduction = $request->introduction;
         $animal->active_status = $request->active_status;
@@ -156,17 +168,12 @@ class AnimalsController extends Controller
     {
         $animal = Animal::findOrFail($id);
 
-        if(isset($request->dog_type)) {
-            $request['type'] = $request->dog_type;
-        } else {
-            $request['type'] = $request->cat_type;
-        }
-
         $request->validate([
             'name' => 'required|max:20',
             'age' => 'required',
             'gender' => 'required',
-            'type' => 'required',
+            'dog_type' => 'nullable|required_without:cat_type',
+            'cat_type' => 'nullable|required_without:dog_type',
             'animal_type' => 'required',
             'introduction' => 'required|max:255',
             'active_status' => 'required',
@@ -199,7 +206,8 @@ class AnimalsController extends Controller
         $animal->name = $request->name;
         $animal->age = $request->age;
         $animal->gender = $request->gender;
-        $animal->type = $request->type;
+        $animal->dog_type = $request->dog_type;
+        $animal->cat_type = $request->cat_type;
         $animal->animal_type = $request->animal_type;
         $animal->introduction = $request->introduction;
         $animal->active_status = $request->active_status;

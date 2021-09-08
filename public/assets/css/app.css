@@ -215,6 +215,10 @@ img {
     flex-wrap: wrap;
 }
 
+.search-box {
+    margin-bottom: 20px;
+}
+
 /*わんにゃん詳細*/
 .show-box {
     padding: 20px;

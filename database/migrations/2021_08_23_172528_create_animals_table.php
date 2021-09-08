@@ -25,7 +25,8 @@ class CreateAnimalsTable extends Migration
             $table->string('name');
             $table->integer('age');
             $table->enum('gender', Gender::getValues());
-            $table->string('type');
+            $table->string('cat_type')->nullable();
+            $table->string('dog_type')->nullable();
             $table->enum('animal_type', AnimalType::getValues());
             $table->text('introduction');
             $table->enum('active_status', ActiveStatus::getValues());

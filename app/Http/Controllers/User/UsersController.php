@@ -27,7 +27,7 @@ class UsersController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        $animals = $user->favorites()->paginate(10);
+        $animals = $user->favorites()->get();
 
         return view('user.show', [
             'user' => $user,

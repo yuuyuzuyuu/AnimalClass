@@ -51,6 +51,5 @@
             @include('user.animal.box')
             {{ $animals->links() }}
         </div>
-
 </div>
 @endsection

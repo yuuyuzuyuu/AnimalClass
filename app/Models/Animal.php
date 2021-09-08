@@ -22,11 +22,11 @@ class Animal extends Model
 
     // 動物の種類取得
     public function getCatsTypeNameAttribute() {
-        return config('type.Cats.'.$this->type);
+        return config('type.Cats.'.$this->cat_type);
     }
 
     public function getDogsTypeNameAttribute() {
-        return config('type.Dogs.'.$this->type);
+        return config('type.Dogs.'.$this->dog_type);
     }
 
     // 動物の年齢取得

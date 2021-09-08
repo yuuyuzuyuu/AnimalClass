@@ -23,15 +23,11 @@
             {!! Form::select('animal_type', $animal_type, null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('type', '種類(猫)') !!}
-            @if($animal->animal_type == 0)
-                {!! Form::select('cat_type', Config::get('type.Cats'), $animal->type, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
-            @elseif($animal->animal_type == 1)
-                {!! Form::select('cat_type', Config::get('type.Cats'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
-            @endif
+            {!! Form::label('cat_type', '種類(猫)') !!}
+            {!! Form::select('cat_type', Config::get('type.Cats'), null, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('type', '種類(犬)') !!}
+            {!! Form::label('dog_type', '種類(犬)') !!}
             @if($animal->animal_type == 1)
                 {!! Form::select('dog_type', Config::get('type.Dogs'), $animal->type, ['class' => 'form-control', 'placeholder'=>'選択してください']) !!}
             @elseif($animal->animal_type == 0)
