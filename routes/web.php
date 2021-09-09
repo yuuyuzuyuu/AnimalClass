@@ -42,7 +42,7 @@ Route::prefix('admin')->group(function() {
 });
 
 Route::get('admin', function() {
-  return view('admin.adminlte');
+  return view('admin.home');
 });
 
 // Route::group(['middleware' => ['auth:admin']], function() {

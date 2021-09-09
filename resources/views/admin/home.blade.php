@@ -1,7 +1,19 @@
-@extends('admin/layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Dashboard')
+
+@section('content_header')
+    <h1>Dashboard</h1>
+@stop
 
 @section('content')
+    <p>Welcome to this beautiful admin panel.</p>
+@stop
 
-    <h1>Admin top</h1>
+@section('css')
+    <link rel="stylesheet" href="/css/admin_custom.css">
+@stop
 
-@endsection
+@section('js')
+    <script> console.log('Hi!'); </script>
+@stop
