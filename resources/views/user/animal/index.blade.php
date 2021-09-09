@@ -1,28 +1,29 @@
 @extends('user/layouts.app')
 
 @section('content')
-    <div class="second-title">わんにゃん一覧</div>
-        <div class="col-md-3">
+    <div class="row">
+        <div class="col-md-4">
+        <div class="second-title">わんにゃん一覧</div>
             <div class="search-box">
                 {!! Form::open(['route'=>'animals.index', 'method' => 'get']) !!}
                     <div class="form-group">
                         {!! Form::label('gender', '性別') !!}
-                        {!! Form::select('gender', ['指定なし'=>'指定なし']+$gender, '指定なし', ['class' => 'form-control']) !!}
+                        {!! Form::select('gender', ['指定なし'=>'指定なし']+$gender, ( isset($old_request['gender']) ? $old_request['gender'] : null), ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('animal_type', '犬か猫') !!}
-                        {!! Form::select('animal_type', ['指定なし'=>'指定なし']+$animal_type, '指定なし', ['class' => 'form-control']) !!}
+                        {!! Form::select('animal_type', ['指定なし'=>'指定なし']+$animal_type, ( isset($old_request['animal_type']) ? $old_request['animal_type'] : null), ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('pref', '都道府県') !!}
-                        {!! Form::select('pref', ['指定なし'=>'指定なし']+Config::get('pref'), '指定なし', ['class' => 'form-control']) !!}
+                        {!! Form::select('pref', ['指定なし'=>'指定なし']+Config::get('pref'), ( isset($old_request['pref']) ? $old_request['pref'] : null), ['class' => 'form-control']) !!}
                     </div>
                     {!! Form::submit('search', ['class' => 'btn btn-block']) !!}
                 {!! Form::close() !!}
             </div>
         </div>
+    </div>
 
-    <div class="row">
         <div class="animal-index">
             @if(count($data) > 0)
                 @foreach($data as $animal)
@@ -38,7 +39,7 @@
                             	    <img src="{{ $animal->image1 }}" width="250px">
                             	    <p>募集終了</p>
                             	@endif
-                            	
+
                                 @if($animal->animal_type == 0 && $animal->gender == 0)
                                     <i class="fas fa-cat fa-2x gender-boy"></i>
                                 @elseif($animal->animal_type == 0 && $animal->gender == 1)
