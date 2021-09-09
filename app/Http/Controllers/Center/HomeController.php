@@ -45,7 +45,7 @@ class HomeController extends Controller
             'postcode' => 'required|max:7',
             'pref' => 'required',
             'address' => 'required',
-            'password' => 'required|min:8|confirmed',
+            'password' => 'confirmed',
         ]);
 
         $center->name = $request->name;
