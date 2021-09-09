@@ -16,7 +16,7 @@ class AddColumnToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('nickname');
             $table->string('tel')->nullable();
-            $table->integer('address_id');
+            $table->integer('pref');
         });
     }
 

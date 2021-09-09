@@ -24,7 +24,7 @@
 
     <div class="row">
         <div class="animal-index">
-            @if(!empty($data))
+            @if(count($data) > 0)
                 @foreach($data as $animal)
                     @if (Auth::guard('center')->check())
                         <a href="{{ route('animals.show', ['animal' => $animal->id])}}">
@@ -52,6 +52,8 @@
                             </div>
                         </a>
                 @endforeach
+            @else
+                <p>検索結果なし</p>
             @endif
             {{ $data->links() }}
         </div>
