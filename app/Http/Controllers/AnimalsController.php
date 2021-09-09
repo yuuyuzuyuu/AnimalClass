@@ -79,12 +79,6 @@ class AnimalsController extends Controller
     {
         $center = \Auth::user('center');
 
-        // if(isset($request->dog_type)) {
-        //     $request['type'] = $request->dog_type;
-        // } else {
-        //     $request['type'] = $request->cat_type;
-        // }
-
         $request->validate([
             'name' => 'required|max:20',
             'age' => 'required',
@@ -113,7 +107,7 @@ class AnimalsController extends Controller
         }
 
         if ($file = $request->file('image3')) {
-            $fileName2 = time() . $file->getClientOriginalName();
+            $fileName3 = time() . $file->getClientOriginalName();
             $path = Storage::disk('s3')->putFile('/', $file, 'public');
             $fileName3 = Storage::disk('s3')->url($path);
         } else {
