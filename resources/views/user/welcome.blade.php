@@ -1,4 +1,4 @@
-@extends('user/layouts.app')
+@extends('layouts.app')
 
 @section('content')
     <div class="user-top">
@@ -45,6 +45,7 @@
                             <p>現在、各施設でお預かりしている子たちです。</p>
                             <p>情報の更新は施設が逐一行っておりますが、<br>既に譲渡が決定してしまっている子がいる場合もありますので<br>ご了承ください。</p>
                         </div>
+                        <div class="second-title"><i class="fas fa-star"></i>新着わんにゃん</div>
                     @include('user.animal.box')
                     <div class="text-right">{!! link_to_route('animals.index', 'もっと見る', [], ['class' => 'btn']) !!}</div>
                 </div>

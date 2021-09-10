@@ -1,9 +1,8 @@
-@extends('user/layouts.app')
+@extends('layouts.app')
 
 @section('content')
     <div class="row">
         <div class="col-md-4">
-        <div class="second-title">わんにゃん一覧</div>
             <div class="search-box">
                 {!! Form::open(['route'=>'animals.index', 'method' => 'get']) !!}
                     <div class="form-group">

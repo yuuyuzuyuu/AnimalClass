@@ -216,7 +216,10 @@ img {
 }
 
 .search-box {
-    margin-bottom: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #E7D4B5;
+    border-radius: 10px;
 }
 
 /*わんにゃん詳細*/

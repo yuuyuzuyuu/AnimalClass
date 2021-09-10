@@ -1,4 +1,4 @@
-@extends('center/layouts.app')
+@extends('layouts.app')
 
 @section('content')
 
@@ -58,6 +58,6 @@
 
     {!! Form::close() !!}
     </div>
-
+</div>
 
 @endsection
