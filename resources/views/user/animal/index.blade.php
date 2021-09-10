@@ -38,9 +38,9 @@
                     @endif
                             <div class="box">
                                 @if($animal->active_status == 0)
-                            	    <img src="{{ $animal->image1 }}" width="250px">
+                            	    <img src="{{ $animal->image1 }}" width="250px" height="177px">
                             	@elseif($animal->active_status == 1)
-                            	    <img src="{{ $animal->image1 }}" width="250px">
+                            	    <img src="{{ $animal->image1 }}" width="250px" height="177px">
                             	    <p>募集終了</p>
                             	@endif
 
