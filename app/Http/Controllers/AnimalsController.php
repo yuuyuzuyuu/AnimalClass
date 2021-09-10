@@ -31,10 +31,12 @@ class AnimalsController extends Controller
 
         $gender = Gender::toselectArray();
         $animal_type = AnimalType::toselectArray();
+        $active_status = ActiveStatus::toselectArray();
 
         $search1 = $request->input('pref');
         $search2 = $request->input('gender');
         $search3 = $request->input('animal_type');
+        $search4 = $request->input('active_status');
 
         if($request->has('pref') && $search1 != ('指定なし')) {
             $animal->whereHas('center', function ($query) use ($search1) {
@@ -50,12 +52,17 @@ class AnimalsController extends Controller
             $animal->where('animal_type', $search3)->get();
         }
 
+        if($request->has('active_status') && $search4 != ('指定なし')) {
+            $animal->where('active_status', $search4)->get();
+        }
+
         $data = $animal->orderBy('created_at', 'DESC')->paginate(8);
 
         return view('user.animal.index', [
             'data' => $data,
             'gender' => $gender,
             'animal_type' => $animal_type,
+            'active_status' => $active_status,
             'old_request' => $request->all()
         ]);
     }

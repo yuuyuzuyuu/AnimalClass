@@ -10,12 +10,16 @@
                         {!! Form::select('gender', ['指定なし'=>'指定なし']+$gender, ( isset($old_request['gender']) ? $old_request['gender'] : null), ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        {!! Form::label('animal_type', '犬か猫') !!}
+                        {!! Form::label('animal_type', '犬・猫') !!}
                         {!! Form::select('animal_type', ['指定なし'=>'指定なし']+$animal_type, ( isset($old_request['animal_type']) ? $old_request['animal_type'] : null), ['class' => 'form-control']) !!}
                     </div>
                     <div class="form-group">
                         {!! Form::label('pref', '都道府県') !!}
                         {!! Form::select('pref', ['指定なし'=>'指定なし']+Config::get('pref'), ( isset($old_request['pref']) ? $old_request['pref'] : null), ['class' => 'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        {!! Form::label('active_status', '募集状況') !!}
+                        {!! Form::select('active_status', ['指定なし'=>'指定なし']+$active_status, ( isset($old_request['active_status']) ? $old_request['active_status'] : null), ['class' => 'form-control']) !!}
                     </div>
                     {!! Form::submit('search', ['class' => 'btn btn-block']) !!}
                 {!! Form::close() !!}
