@@ -24,7 +24,7 @@ header {
 }
 
 main {
-    margin-top: 150px;
+    margin-top: 100px;
     width: 70%;
 }
 
@@ -55,8 +55,12 @@ img {
 }
 
 /*トップページ*/
-#top, #about, #dogsandcats, #reservation, #contact, #sns {
+#about, #dogsandcats, #reservation, #contact, #sns {
     padding: 150px 0;
+}
+
+#top {
+    padding-bottom: 150px;
 }
 
 .top-title {
@@ -67,6 +71,7 @@ img {
 
 .top-comment {
     padding-top: 200px;
+    text-align: center;
 }
 
 .second-title {
@@ -77,6 +82,12 @@ img {
 
 .user-top p {
     color: #A0937D;
+}
+
+.top-comment p {
+    font-size: 16px;
+    color: white;
+    opacity: 0.8;
 }
 
 .user-top img {
@@ -338,12 +349,24 @@ nav li.has-child ul li a:active {
     border-radius: 10px;
 }
 
+.search-result {
+    background-color: #E7D4B5;
+    border-radius: 10px;
+    padding: 25px;
+}
+
 /*わんにゃん詳細*/
 .show-box {
     padding: 20px;
     margin: 20px;
     background-color: #E7D4B5;
     border-radius: 10px;
+    transition: all .3s;
+}
+
+.show-box:nth-child(2):hover
+{
+    background-color: #A0937D;
 }
 
 .information-box {

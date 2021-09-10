@@ -28,9 +28,12 @@
         </table>
         {!! link_to_route('user.edit', '編集', ['user' => $user->id], ['class' => 'btn btn-block']) !!}
     </div>
-        
+
         <div class="second-title"><i class="fas fa-heart"></i>お気に入りの子</div>
-        @include('user.animal.box')
+        <div class="animal-index">
+            @include('user.animal.box')
+            {{ $animals->links() }}
+        </div>
 </div>
 
 @endsection

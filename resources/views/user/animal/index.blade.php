@@ -27,6 +27,7 @@
         </div>
     </div>
 
+    <div class="search-result">
         <div class="animal-index">
             @if(count($data) > 0)
                 @foreach($data as $animal)

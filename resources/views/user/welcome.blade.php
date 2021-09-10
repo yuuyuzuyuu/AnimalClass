@@ -15,10 +15,13 @@
         <section id="top">
             <div class="row">
                 <div class="col-8">
-                    <img src="/images/cat1.png">
+                    <img src="/images/top.png">
                 </div>
                 <div class="col-4">
-                    <p class="top-comment text-center">わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？</p>
+                    <div class="top-comment">
+                        <p>ここは、動物保護施設と新しい家族をつなぐ場所です。</p><br>
+                        <p>わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -46,7 +49,7 @@
                             <p>情報の更新は施設が逐一行っておりますが、<br>既に譲渡が決定してしまっている子がいる場合もありますので<br>ご了承ください。</p>
                         </div>
                         <div class="second-title"><i class="fas fa-star"></i>新着わんにゃん</div>
-                    @include('user.animal.box')
+                        @include('user.animal.box')
                     <div class="text-right">{!! link_to_route('animals.index', 'もっと見る', [], ['class' => 'btn']) !!}</div>
                 </div>
             </div>
