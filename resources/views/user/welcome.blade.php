@@ -2,36 +2,36 @@
 
 @section('content')
     <div class="user-top">
-        
+
         <ul id="page-link">
-            <li><a href="#top">TOP</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#dogsandcats">Dogs and Cats</a></li>
-            <li><a href="#reservation">RESERVATION</a></li>
-            <li><a href="#contact">CONTACT</a></li>
-            <li><a href="#sns">SNS</a></li>
+            <li class="current"><a href="#top"><span>HOME</span><span>ホーム</span></a></li>
+            <li><a href="#about"><span>ABOUT</span><span>私たちについて</span></a></li>
+            <li><a href="#dogsandcats"><span>Dogs and Cats</span><span>わんにゃん</span></a></li>
+            <li><a href="#reservation"><span>RESERVATION</span><span>予約</span></a></li>
+            <li><a href="#contact"><span>CONTACT</span><span>お問い合わせ</span></a></li>
+            <li><a href="#sns"><span>SNS</span><span>SNS</span></a></li>
         </ul>
 
         <section id="top">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-8">
                     <img src="/images/cat1.png">
                 </div>
-                <div class="col-md-4">
-                    <p class="text-center">わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？</p>
+                <div class="col-4">
+                    <p class="top-comment text-center">わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？</p>
                 </div>
             </div>
         </section>
 
         <section id="about">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-4">
                     <div class="top-title">ABOUT</div>
                     <p>あにまるくらすでは、<br>保護されたわんちゃんねこちゃんたちと<br>新しい家族をつなげる活動を行っています。</p>
                     <p>大切にしてくれる家族に出会えるのを、<br>みんな心待ちにしています。</p>
                     <p>どんな子がいるのか、<br>ちょっと覗いてみませんか？</p>
                 </div>
-                <div class="col-md-8">
+                <div class="col-8">
                     <img src="/images/dog1.png">
                 </div>
             </div>
@@ -39,7 +39,7 @@
 
         <section id="dogsandcats">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-12">
                     <div class="top-title text-center">Dogs and Cats</div>
                         <div class="text-center">
                             <p>現在、各施設でお預かりしている子たちです。</p>
@@ -54,10 +54,10 @@
 
         <section id="reservation">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-8">
                     <img src="/images/cat2.png">
                 </div>
-                <div class="col-md-4">
+                <div class="col-4">
                     <div class="top-title">Reservation</div>
                     <p>直接会ってみたい方は、<br>こちらで予約を受け付けております。</p>
                 </div>
@@ -66,13 +66,13 @@
 
         <section id="contact">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-4">
                     <div class="top-title">Contact</div>
                     <p>何かご不明な点がございましたら、<br>お気軽にお問い合わせください。</p>
                     <p>フォームにてお問い合わせの際には<br>会員登録をお願いしております。</p>
                     <p>Tel.000-0000-0000</p>
                 </div>
-                <div class="col-md-8">
+                <div class="col-8">
                     <img src="/images/dog2.png">
                 </div>
             </div>

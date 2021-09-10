@@ -1,38 +1,36 @@
-<header class="mb-4">
-    <nav class="navbar navbar-expand-sm">
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="nav-bar">
-            <ul class="navbar-nav mr-auto"></ul>
-            <ul class="navbar-nav">
+<div class="logo text-center">
+    @if (Auth::guard('user')->check())
+        <a href='/'><img src="/images/logo.png"></a>
+    @elseif (Auth::guard('center')->check())
+        <a href='/animals'><img src="/images/logo.png"></a>
+    @else
+        <a href='/'><img src="/images/logo.png"></a>
+    @endif
+</div>
+<nav>
+    <ul>
+        <li><a href="/"><i class="fas fa-paw"></i>&nbsp;トップ</a></li>
+        <li><a href="/animals"><i class="fas fa-paw"></i>&nbsp;わんにゃん一覧</a></li>
+        <li class="has-child"><a><i class="fas fa-paw"></i>&nbsp;一般の方</a>
+            <ul>
+                <li>{!! link_to_route('user.login', 'ログイン', [], ['class'=>'a']) !!}</li>
+                <li>{!! link_to_route('signup.get', '会員登録', [], ['class'=>'a']) !!}</li>
                 @if (Auth::guard('user')->check())
-                    <li>{!! link_to_route('user.show', 'マイページ', ['user' => Auth::id()], ['class' => 'nav-link']) !!}</li>
-                    <li>{!! link_to_route('animals.index', 'わんにゃん一覧', [], ['class' => 'nav-link']) !!}</li>
+                    <li>{!! link_to_route('user.show', 'マイページ', ['user' => Auth::id()], ['class' => 'a']) !!}</li>
                     <li>{!! link_to_route('user.logout.get', 'ログアウト', [], ['class' => 'nav-link']) !!}</li>
-                    <li>{!! link_to_route('center.login', '施設の方はこちら', [], ['class' => 'nav-link']) !!}</li>
-                @elseif (Auth::guard('center')->check())
-                    <li>{!! link_to_route('center.show', 'マイページ', ['center' => Auth::guard('center')->id()], ['class' => 'nav-link']) !!}</li>
-                    <li>{!! link_to_route('animals.create', 'わんにゃん登録', [], ['class' => 'nav-link']) !!}</li>
-                    <li>{!! link_to_route('animals.index', 'わんにゃん一覧', [], ['class' => 'nav-link']) !!}</li>
-                    <li>{!! link_to_route('center.logout.get', 'ログアウト',[], ['class' => 'nav-link']) !!}</li>
-                    <li>{!! link_to('/', '一般ユーザーの方はこちら', ['class' => 'nav-link']) !!}</li>
-                @else
-                    <li>{!! link_to_route('signup.get', '会員登録', [], ['class' => 'nav-link']) !!}</li>
-                    <li>{!! link_to_route('user.login', 'ログイン', [], ['class' => 'nav-link']) !!}</li>
-                    <li>{!! link_to_route('center.login', '施設の方はこちら', [], ['class' => 'nav-link']) !!}</li>
                 @endif
             </ul>
-        </div>
-    </nav>
-        <div class="logo text-center">
-            @if (Auth::guard('user')->check())
-                <a href='/'><img src="/images/logo.png"></a>
-            @elseif (Auth::guard('center')->check())
-                <a href='/animals'><img src="/images/logo.png"></a>
-            @else
-                <a href='/'><img src="/images/logo.png"></a>
-            @endif
-        </div>
-</header>
+        </li>
+        <li class="has-child"><a><i class="fas fa-paw"></i>&nbsp;施設の方</a>
+            <ul>
+                <li>{!! link_to_route('center.login', 'ログイン', [], ['class'=>'a']) !!}</li>
+                <li>{!! link_to_route('center.signup.get', '会員登録', [], ['class'=>'a']) !!}</li>
+                @if (Auth::guard('center')->check())
+                    <li>{!! link_to_route('center.show', 'マイページ', ['center' => Auth::guard('center')->id()], ['class' => 'a']) !!}</li>
+                    <li>{!! link_to_route('animals.create', 'わんにゃん登録', [], ['class'=>'a']) !!}</li>
+                    <li>{!! link_to_route('center.logout.get', 'ログアウト',[], ['class' => 'nav-link']) !!}</li>
+                @endif
+            </ul>
+        </li>
+    </ul>
+</nav>
