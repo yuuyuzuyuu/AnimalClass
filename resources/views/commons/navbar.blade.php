@@ -11,7 +11,7 @@
     <ul>
         <li><a href="/">トップ</a></li>
         <li>{!! link_to_route('animals.index', 'わんにゃん一覧', [], ['class' => 'a']) !!}</li>
-        <li class="has-child"><a><i class="fas fa-paw"></i>&nbsp;一般の方</a>
+        <li class="has-child"><a><i class="fas fa-paw faa-tada animated-hover"></i>&nbsp;一般の方</a>
             <ul>
                 <li>{!! link_to_route('user.login', 'ログイン', [], ['class'=>'a']) !!}</li>
                 <li>{!! link_to_route('signup.get', '会員登録', [], ['class'=>'a']) !!}</li>
@@ -20,7 +20,7 @@
                 @endif
             </ul>
         </li>
-        <li class="has-child"><a><i class="fas fa-paw"></i>&nbsp;施設の方</a>
+        <li class="has-child"><a><i class="fas fa-paw faa-tada animated-hover"></i>&nbsp;施設の方</a>
             <ul>
                 <li>{!! link_to_route('center.login', 'ログイン', [], ['class'=>'a']) !!}</li>
                 <li>{!! link_to_route('center.signup.get', '会員登録', [], ['class'=>'a']) !!}</li>

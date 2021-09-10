@@ -20,7 +20,7 @@
                 <div class="col-4">
                     <div class="top-comment">
                         <p>ここは、動物保護施設と新しい家族をつなぐ場所です。</p><br>
-                        <p>わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？</p>
+                        <p>わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？<i class="fas fa-paw"></i></p>
                     </div>
                 </div>
             </div>
