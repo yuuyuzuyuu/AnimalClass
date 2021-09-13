@@ -29,8 +29,6 @@
                     <p>あにまるくらすでは、<br>保護されたわんちゃんねこちゃんたちと<br>新しい家族をつなげる活動を行っています。</p>
                     <p>大切にしてくれる家族に出会えるのを、<br>みんな心待ちにしています。</p>
                     <p>どんな子がいるのか、<br>ちょっと覗いてみませんか？</p>
-                    {!! link_to_route('signup.get', '会員登録', [], ['class' => 'btn']) !!}
-                    {!! link_to_route('center.signup.get', '施設会員登録', [], ['class' => 'btn']) !!}
                 </div>
                 <div class="col-8">
                     <img src="/images/dog1.png">
