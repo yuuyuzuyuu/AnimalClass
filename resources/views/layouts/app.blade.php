@@ -13,9 +13,9 @@
         <div class="body-container">
             <header>
                 @include('commons.navbar')
-                @include('commons.error_messages')
             </header>
             <main>
+                @include('commons.error_messages')
                 @yield('content')
                 <footer class="text-center">
                     <p id="page-top"><a href="#">PageTop</a></p>
