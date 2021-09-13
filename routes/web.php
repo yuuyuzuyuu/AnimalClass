@@ -28,9 +28,13 @@ Route::group(['middleware' => ['auth:user']], function() {
     Route::delete('unfavorite', 'FavoritesController@destroy')->name('favorites.unfavorite');
   });
   Route::resource('user', 'User\UsersController');
-  Route::get('/user/{id}/animals', 'AnimalsController@show')->name('user.animals.show');
-  // Route::resource('user/center', 'Center\HomeController', ['only' => ['show']])->name('user.center.show');
-  Route::get('/user/center/{id}', 'Center\HomeController@show')->name('user.center.show');
+  Route::group(['prefix'=>'user'], function() {
+    Route::get('/{id}/animals', 'AnimalsController@show')->name('user.animals.show');
+    Route::get('/center/{id}', 'Center\HomeController@show')->name('user.center.show');
+  });
+  Route::get('/contact', 'ContactsController@index')->name('contact.index');
+  Route::post('/contact/confirm', 'ContactsController@confirm')->name('contact.confirm');
+  Route::post('/contact/thanks', 'ContactsController@send')->name('contact.send');
 });
 
 

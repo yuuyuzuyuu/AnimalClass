@@ -14,14 +14,10 @@
 
         <section id="top">
             <div class="row">
-                <div class="col-8">
-                    <img src="/images/top.png">
-                </div>
-                <div class="col-4">
-                    <div class="top-comment">
-                        <p>ここは、動物保護施設と新しい家族をつなぐ場所です。</p><br>
-                        <p>わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？<i class="fas fa-paw"></i></p>
-                    </div>
+                <img src="/images/top.png">
+                <div class="top-comment">
+                    <p>あにまるくらすは<br>動物保護施設と新しい家族をつなぐ場所です。</p><br>
+                    <p>わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？<i class="fas fa-paw"></i></p>
                 </div>
             </div>
         </section>
@@ -33,6 +29,8 @@
                     <p>あにまるくらすでは、<br>保護されたわんちゃんねこちゃんたちと<br>新しい家族をつなげる活動を行っています。</p>
                     <p>大切にしてくれる家族に出会えるのを、<br>みんな心待ちにしています。</p>
                     <p>どんな子がいるのか、<br>ちょっと覗いてみませんか？</p>
+                    {!! link_to_route('signup.get', '会員登録', [], ['class' => 'btn']) !!}
+                    {!! link_to_route('center.signup.get', '施設会員登録', [], ['class' => 'btn']) !!}
                 </div>
                 <div class="col-8">
                     <img src="/images/dog1.png">
@@ -73,7 +71,8 @@
                     <div class="top-title">Contact</div>
                     <p>何かご不明な点がございましたら、<br>お気軽にお問い合わせください。</p>
                     <p>フォームにてお問い合わせの際には<br>会員登録をお願いしております。</p>
-                    <p>Tel.000-0000-0000</p>
+                    <p class="tel"><i class="fas fa-phone"></i>000-0000-0000</p>
+                    {!! link_to_route('contact.index', 'お問い合わせフォーム', [], ['class' => 'btn']) !!}
                 </div>
                 <div class="col-8">
                     <img src="/images/dog2.png">

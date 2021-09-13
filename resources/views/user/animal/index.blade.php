@@ -35,6 +35,8 @@
                         <a href="{{ route('animals.show', ['animal' => $animal->id])}}">
                     @elseif(Auth::guard('user')->check())
                         <a href="{{ route('user.animals.show', ['id' => $animal->id])}}">
+                    @else
+                        <a href="{{ route('signup.get')}}">
                     @endif
                             <div class="box">
                                 @if($animal->active_status == 0)

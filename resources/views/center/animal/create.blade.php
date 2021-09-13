@@ -2,7 +2,6 @@
 
 @section('content')
 
-
     <div class="row">
         <div class="animal-new">
         <div class="second-title">NEW animal</div>
