@@ -26,8 +26,8 @@
             <div class="show-box">
                 <table class="table table-borderless">
                     <tr>
-                        <th>なまえ</th>
-                        <td>{{ $animal->name }}</td>
+                        <th width="30%">なまえ</th>
+                        <td width="70%">{{ $animal->name }}</td>
                     </tr>
                     <tr>
                         <th>性別</th>
@@ -74,8 +74,8 @@
                         <table class="table table-borderless">
                             <h4 class="text-center text-white"><i class="fas fa-home"></i>施設情報</h4>
                             <tr>
-                                <th>施設</th>
-                                <td>{{ $animal->center->name }}</td>
+                                <th width="30%">施設</th>
+                                <td width="70%">{{ $animal->center->name }}</td>
                             </tr>
                             <tr>
                                 <th>住所</th>
