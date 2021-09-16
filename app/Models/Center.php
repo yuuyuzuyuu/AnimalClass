@@ -57,4 +57,9 @@ class Center extends Authenticatable
     {
         $this->loadCount('animals');
     }
+    
+    public function messages()
+    {
+        return $this->hasMany('App\Models\Message');
+    }
 }

@@ -15,7 +15,6 @@
             <ul>
                 @if (Auth::guard('user')->check())
                     <li>{!! link_to_route('user.show', 'マイページ', ['user' => Auth::id()], ['class' => 'a']) !!}</li>
-                    <li>{!! link_to_route('contact.index', 'お問い合わせ', [], ['class' => 'a']) !!}</li>
                 @else
                     <li>{!! link_to_route('user.login', 'ログイン', [], ['class'=>'a']) !!}</li>
                     <li>{!! link_to_route('signup.get', '会員登録', [], ['class'=>'a']) !!}</li>
@@ -27,13 +26,13 @@
                 @if (Auth::guard('center')->check())
                     <li>{!! link_to_route('center.show', 'マイページ', ['center' => Auth::guard('center')->id()], ['class' => 'a']) !!}</li>
                     <li>{!! link_to_route('animals.create', 'わんにゃん登録', [], ['class'=>'a']) !!}</li>
-                    <li>{!! link_to_route('contact.index', 'お問い合わせ', [], ['class' => 'a']) !!}</li>
                 @else
                     <li>{!! link_to_route('center.login', 'ログイン', [], ['class'=>'a']) !!}</li>
                     <li>{!! link_to_route('center.signup.get', '会員登録', [], ['class'=>'a']) !!}</li>
                 @endif
             </ul>
         </li>
+        <li>{!! link_to_route('contact.index', 'お問い合わせ', [], ['class' => 'a']) !!}</li>
         @if (Auth::guard('user')->check())
             <li>{!! link_to_route('user.logout.get', 'ログアウト', [], ['class' => 'nav-link']) !!}</li>
         @elseif (Auth::guard('center')->check())

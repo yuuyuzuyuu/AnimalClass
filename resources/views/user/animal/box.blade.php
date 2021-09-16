@@ -7,12 +7,20 @@
         <a href="{{ route('signup.get')}}">
     @endif
             <div class="box">
-                @if($animal->active_status == 0)
-            	    <img src="{{ $animal->image1 }}" width="250px" height="177px">
-            	@elseif($animal->active_status == 1)
-            	    <img src="{{ $animal->image1 }}" width="250px" height="177px">
-            	    <p>募集終了</p>
-            	@endif
+                <div class="box-image">
+                    @if($animal->active_status == 0)
+                	    @if($animal->image2)
+                	        <img src="{{ $animal->image2 }}" width="250px" height="177px">
+                	    @endif
+                	    <img src="{{ $animal->image1 }}" width="250px" height="177px">
+                	@elseif($animal->active_status == 1)
+                	    @if($animal->image2)
+                	        <img src="{{ $animal->image2 }}" width="250px" height="177px">
+                	    @endif
+                	    <img src="{{ $animal->image1 }}" width="250px" height="177px">
+                	    <p>募集終了</p>
+                	@endif
+                </div>
 
                 @if($animal->animal_type == 0 && $animal->gender == 0)
                     <i class="fas fa-cat fa-2x gender-boy"></i>

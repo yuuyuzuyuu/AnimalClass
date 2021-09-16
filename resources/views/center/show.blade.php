@@ -41,13 +41,16 @@
                         </td>
                     </tr>
                 </table>
-                @if (Auth::guard('center')->check())
-                    @if(Auth::id() === $center->id)
-                        {!! link_to_route('center.edit', '編集', ['center' => $center->id], ['class' => 'btn btn-block']) !!}
-                    @endif
+                @if (Auth::id() === $center->id && Auth::guard('center')->check())
+                    {!! link_to_route('center.edit', '編集', ['center' => $center->id], ['class' => 'btn btn-block']) !!}
                 @endif
             </div>
         </div>
+        <!--<div class="col-5">-->
+        <!--    <p>チャットボタン</p>-->
+            <!--<td><a href="/chat/{{$center->id}}"><button type="button" class="btn">Chat</button></a></td>-->
+
+        <!--</div>-->
     </div>
 
         <div class="second-title"><i class="fas fa-gift"></i>この施設のわんにゃん</div>

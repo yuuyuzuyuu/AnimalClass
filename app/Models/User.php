@@ -82,4 +82,14 @@ class User extends Authenticatable
     {
         return $this->favorites()->where('animal_id', $animalId)->exists();
     }
+    
+    public function messages()
+    {
+        return $this->hasMany('App\Models\Message');
+    }
+    
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
+    }
 }

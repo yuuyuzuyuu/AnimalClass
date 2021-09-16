@@ -17,7 +17,6 @@
             @if(Auth::guard('user')->check())
                 @include('user.animal.favorite_button')
             @endif
-            <div class="second-title">New Information</div>
             @include('center.information.information')
             @include('center.information.form')
         </div>
@@ -55,9 +54,13 @@
                         <th>募集情報</th>
                         <td>{{ App\Enums\ActiveStatus::getDescription($animal->active_status) }}</td>
                     </tr>
+                    <tr>
+                        <th>登録日</th>
+                        <td>{{ $animal->created_at->format('Y/m/d') }}</td>
+                    </tr>
                 </table>
 
-                @if(Auth::id('center') === $animal->center_id)
+                @if(Auth::id('center') === $animal->center_id && Auth::guard('center')->check())
                     {!! link_to_route('animals.edit', '編集', ['animal' => $animal->id], ['class' => 'btn btn-block']) !!}
                     {!! Form::model($animal, ['route' => ['animals.destroy', $animal->id], 'method' => 'delete']) !!}
                         {!! Form::submit('削除', ['class' => 'btn btn-block']) !!}

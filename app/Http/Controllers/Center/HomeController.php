@@ -18,7 +18,7 @@ class HomeController extends Controller
     public function show($id)
     {
         $center = Center::findOrFail($id);
-        $animals = Animal::where('center_id', $center->id)->paginate(8);
+        $animals = Animal::where('center_id', $center->id)->orderBy('created_at', 'DESC')->paginate(8);
 
         return view('center.show', [
             'center' => $center,

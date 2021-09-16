@@ -3,7 +3,7 @@
 @section('content')
 <div class="mypage">
     <div class="row">
-        <div class="col-7">
+        <div class="col-6">
             <div class="mypage-content">
                 <div class="second-title"><i class="fas fa-paw"></i>マイページ</div>
                 <table class="table table-borderless">
@@ -28,7 +28,9 @@
                         <td>{{ $user -> prefName }}</td>
                     </tr>
                 </table>
-                {!! link_to_route('user.edit', '編集', ['user' => $user->id], ['class' => 'btn btn-block']) !!}
+                @if(Auth::id() === $user->id)
+                    {!! link_to_route('user.edit', '編集', ['user' => $user->id], ['class' => 'btn btn-block']) !!}
+                @endif
             </div>
         </div>
     </div>

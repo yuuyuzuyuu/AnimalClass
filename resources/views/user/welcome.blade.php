@@ -6,7 +6,7 @@
         <ul id="page-link">
             <li class="current"><a href="#top"><span>HOME</span><span>ホーム</span></a></li>
             <li><a href="#about"><span>ABOUT</span><span>私たちについて</span></a></li>
-            <li><a href="#dogsandcats"><span>Dogs and Cats</span><span>わんにゃん</span></a></li>
+            <li><a href="#dogsandcats"><span>ANIMALS</span><span>わんにゃん</span></a></li>
             <li><a href="#reservation"><span>RESERVATION</span><span>予約</span></a></li>
             <li><a href="#contact"><span>CONTACT</span><span>お問い合わせ</span></a></li>
             <li><a href="#sns"><span>SNS</span><span>SNS</span></a></li>
@@ -45,7 +45,9 @@
                             <p>情報の更新は施設が逐一行っておりますが、<br>既に譲渡が決定してしまっている子がいる場合もありますので<br>ご了承ください。</p>
                         </div>
                         <div class="second-title"><i class="fas fa-star"></i>新着わんにゃん</div>
-                        @include('user.animal.box')
+                        <div class="top-animal-index">
+                            @include('user.animal.box')
+                        </div>
                     <div class="text-right">{!! link_to_route('animals.index', 'もっと見る', [], ['class' => 'btn']) !!}</div>
                 </div>
             </div>
@@ -67,8 +69,8 @@
             <div class="row">
                 <div class="col-4">
                     <div class="top-title">Contact</div>
-                    <p>何かご不明な点がございましたら、<br>お気軽にお問い合わせください。</p>
-                    <p>フォームにてお問い合わせの際には<br>会員登録をお願いしております。</p>
+                    <p>このサイトについて<br>何かご不明な点がございましたら、<br>お気軽にお問い合わせください。</p>
+                    <p>&#x203B;施設へのご質問は<br>直接施設へお問い合わせください。</p>
                     <p class="tel"><i class="fas fa-phone"></i>000-0000-0000</p>
                     {!! link_to_route('contact.index', 'お問い合わせフォーム', [], ['class' => 'btn']) !!}
                 </div>

@@ -7,7 +7,7 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-6 offset-sm-3">
+        <div class="col-6 offset-3">
             
             <div class="caution">
                 <span class="caution-title">注意</span>

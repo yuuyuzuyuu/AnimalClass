@@ -1,4 +1,7 @@
 @foreach ($animal->informations as $information)
+    @if($animal->informations)
+        <div class="second-title">New Information</div>
+    @endif
     <div class="information-box">
         <p>{!! $information->content !!}</p>
         <p class="information-time">{!! $information->created_at->format('Y/m/d H:i') !!}</p>

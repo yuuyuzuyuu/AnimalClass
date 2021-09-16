@@ -14,6 +14,14 @@
 Route::get('/', 'User\UsersController@index');
 Route::get('/animals', 'AnimalsController@index')->name('animals.index');
 
+Route::get('/contact', 'ContactsController@index')->name('contact.index');
+Route::post('/contact/confirm', 'ContactsController@confirm')->name('contact.confirm');
+Route::post('/contact/thanks', 'ContactsController@send')->name('contact.send');
+
+Route::get('chats', 'ChatsController@index');
+Route::get('chats/messages', 'ChatsController@fetchMessages');
+Route::post('chats/messages', 'ChatsController@sendMessage');
+
 // ユーザ
 Route::get('signup', 'User\Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'User\Auth\RegisterController@register')->name('signup.post');
@@ -32,11 +40,7 @@ Route::group(['middleware' => ['auth:user']], function() {
     Route::get('/{id}/animals', 'AnimalsController@show')->name('user.animals.show');
     Route::get('/center/{id}', 'Center\HomeController@show')->name('user.center.show');
   });
-  Route::get('/contact', 'ContactsController@index')->name('contact.index');
-  Route::post('/contact/confirm', 'ContactsController@confirm')->name('contact.confirm');
-  Route::post('/contact/thanks', 'ContactsController@send')->name('contact.send');
 });
-
 
 // 管理者
 Route::prefix('admin')->group(function() {
@@ -48,10 +52,6 @@ Route::prefix('admin')->group(function() {
 Route::get('admin', function() {
   return view('admin.home');
 });
-
-// Route::group(['middleware' => ['auth:admin']], function() {
-//   Route::resource('admin', 'Admin\HomeController');
-// });
 
 //センター
 Route::group(['prefix' => 'center'], function () {
