@@ -478,3 +478,10 @@ nav li.has-child ul li a:active {
 .mypage-content {
     padding-bottom: 60px;
 }
+
+/*管理者画面*/
+.admin-list {
+    padding: 30px;
+    background-color: #E7D4B5;
+    border-radius: 10px;
+}

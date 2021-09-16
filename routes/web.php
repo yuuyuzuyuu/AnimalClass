@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'User\UsersController@index');
+Route::get('/admin', 'Admin\HomeController@index');
 Route::get('/animals', 'AnimalsController@index')->name('animals.index');
 
 Route::get('/contact', 'ContactsController@index')->name('contact.index');
@@ -47,11 +48,12 @@ Route::prefix('admin')->group(function() {
   Route::get('login', 'Admin\Auth\LoginController@showLoginForm')->name('admin.login');
   Route::post('login', 'Admin\Auth\LoginController@login')->name('admin.login.post');
   Route::get('logout', 'Admin\Auth\LoginController@logout')->name('admin.logout.get');
+  Route::group(['middleware' => ['auth:admin']], function() {
+    Route::get('user', 'Admin\HomeController@user')->name('admin.user');
+    Route::get('center', 'Admin\HomeController@center')->name('admin.center');
+  });
 });
 
-Route::get('admin', function() {
-  return view('admin.home');
-});
 
 //センター
 Route::group(['prefix' => 'center'], function () {
