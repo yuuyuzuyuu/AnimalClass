@@ -30,20 +30,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"></script>
-        <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
-          <script>
-
-            Pusher.logToConsole = true;
-
-            var pusher = new Pusher("{{ config('const.pusher.app_key') }}", {
-              cluster: "{{ config('const.pusher.cluster') }}"
-            });
-
-            var channel = pusher.subscribe('my-channel');
-            channel.bind('my-event', function(data) {
-              alert(JSON.stringify(data));
-            });
-          </script>
         <script src="/js/jquery.jscroll.js"></script>
         <script src="/js/index.js"></script>
         <script src="/js/toplink.js"></script>
