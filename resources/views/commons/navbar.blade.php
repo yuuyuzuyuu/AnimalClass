@@ -1,11 +1,5 @@
 <div class="logo text-center">
-    @if (Auth::guard('user')->check())
-        <a href='/'><img src="/images/logo.png"></a>
-    @elseif (Auth::guard('center')->check())
-        <a href='/animals'><img src="/images/logo.png"></a>
-    @else
-        <a href='/'><img src="/images/logo.png"></a>
-    @endif
+    <a href='/'><img src="/images/logo.png"></a>
 </div>
 <nav>
     <ul>
