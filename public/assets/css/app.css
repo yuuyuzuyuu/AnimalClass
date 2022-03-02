@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
 }
 
-.body-container {
+#container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -60,14 +60,22 @@ img {
 }
 
 #top {
-    padding-bottom: 150px;
+    margin-bottom: 150px;
     position: relative;
+    height: 600px;
 }
 
 .top-title {
     font-size: 60px;
     color: #A0937D;
     margin-bottom: 20px;
+}
+
+.top-image {
+    background-image: url(/images/top.png);
+    background-size: cover;
+    height: 500px;
+    width: 100%;
 }
 
 .top-comment {
