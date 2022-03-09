@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="top-image">
                     <div class="top-comment">
-                        <p>あにまるくらすは<br>動物保護施設と新しい家族をつなぐ場所です。</p><br>
+                        <p>あにまるくらすは<br>動物保護施設と新しい家族をつなぐ場所です。。</p><br>
                         <p>わんちゃん<br>ねこちゃんを<br>大切な家族の一員として<br>お迎えしませんか？<i class="fas fa-paw"></i></p>
                     </div>
                 </div>
