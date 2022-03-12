@@ -12,19 +12,19 @@
     </head>
 
     <body>
-        <div class="body-container">
+        <div id="container">
             <header>
                 @include('commons.navbar')
             </header>
             <main>
                 @include('commons.error_messages')
                 @yield('content')
-                <footer class="text-center">
-                    <p id="page-top"><a href="#"><i class="fas fa-arrow-circle-up fa-3x"></i></a></p>
-                    <p>&copy;animal class</p>
-                </footer>
             </main>
         </div>
+            <footer class="text-center">
+                <p id="page-top"><a href="#"><i class="fas fa-arrow-circle-up fa-3x"></i></a></p>
+                <p>&copy;animal class</p>
+            </footer>
 
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
