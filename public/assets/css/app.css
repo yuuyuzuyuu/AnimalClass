@@ -14,8 +14,6 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    min-height: 100vh;
-    margin: 0 200px 0 0;
 }
 
 header {
@@ -26,6 +24,13 @@ header {
 main {
     margin-top: 100px;
     width: 70%;
+}
+
+@media screen and (max-width:768px){
+    header,
+    main{
+        width: 100%;
+    }
 }
 
 a, a:hover, a:visited {
@@ -121,7 +126,7 @@ img {
 nav ul {
     list-style: none;
     text-align: center;
-    padding: 0;
+    /*padding: 0;*/
 }
 
 nav ul li {
@@ -179,6 +184,27 @@ nav li.has-child ul li a:hover,
 nav li.has-child ul li a:active {
     background: #A0937D;
 }
+
+@media screen and (max-width:768px) {
+    /*nav{*/
+    /*    background: #333;*/
+    /*    color: #fff;*/
+    /*}*/
+
+    nav li.has-child ul,
+    nav li.has-child ul ul{
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        display: none;
+        transition: none;
+    }
+
+}
+
 
 /*ページリンク*/
 
