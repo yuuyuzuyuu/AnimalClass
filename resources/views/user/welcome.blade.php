@@ -20,7 +20,6 @@
                         <p>どんな動物にでも<br>愛される権利があるはず。<i class="fas fa-paw"></i></p>
                     </div>
                 </div>
-                <!--<img src="/images/top.png">-->
             </div>
         </section>
 
@@ -33,7 +32,7 @@
                     <p>どんな子がいるのか、<br>ちょっと覗いてみませんか？</p>
                 </div>
                 <div class="col-md-8">
-                    <img src="/images/dog1.png">
+                    <!--<img src="/images/dog1.png">-->
                 </div>
             </div>
         </section>

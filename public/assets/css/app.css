@@ -28,7 +28,6 @@ header {
 }
 
 main {
-    margin-top: 100px;
     width: 70%;
 }
 
@@ -74,6 +73,18 @@ img {
     margin-bottom: 150px;
     position: relative;
     height: 600px;
+}
+
+#about {
+    background-image: url(/images/dog1.png);
+    background-size: cover;
+    height: 550px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.user-top {
+    margin-top: 100px;
 }
 
 .top-title {
