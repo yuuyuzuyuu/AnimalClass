@@ -79,7 +79,7 @@ img {
     background-image: url(/images/dog1.png);
     background-size: cover;
     height: 550px;
-    width: 100%;
+    width: 80%;
     border-radius: 15px;
 }
 
@@ -87,7 +87,7 @@ img {
     background-image: url(/images/dog2.png);
     background-size: cover;
     height: 550px;
-    width: 100%;
+    width: 80%;
     border-radius: 15px;
 }
 
@@ -95,7 +95,7 @@ img {
     background-image: url(/images/cat2.png);
     background-size: cover;
     height: 550px;
-    width: 100%;
+    width: 80%;
     border-radius: 15px;
 }
 
@@ -113,7 +113,7 @@ img {
     background-image: url(/images/top.png);
     background-size: cover;
     height: 550px;
-    width: 100%;
+    width: 90%;
     border-radius: 15px;
 }
 
