@@ -5,14 +5,9 @@
 }
 
 /*全体*/
-@font-face {
-    font-family: Font;
-    src: url("/fonts/NotoSansCJKjp-Light.otf") format("truetype");
-}
-
 body {
     background-color: #F6E6CB;
-    font-family: Font;
+    font-family: 'Kiwi Maru', serif;
     min-height: 100vh;
 }
 
