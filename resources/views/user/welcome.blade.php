@@ -13,10 +13,14 @@
         </ul>
 
         <section id="top">
-            <div class="top-image">
-                <div class="top-comment">
-                    <p>動物保護施設と新しい家族を<br>新しい絆で結びます。</p><br>
-                    <p>どんな動物にでも<br>愛される権利があるはず。<i class="fas fa-paw"></i></p>
+            <div class="top-comment">
+                <div class="top-comment-left">
+                    <p>動物保護施設と新しい家族を</p>
+                    <p>新しい絆で結ぶお手伝い。</p>
+                </div>
+                <div class="top-comment-right">
+                    <p>すべてのわんちゃん・ねこちゃんが</p>
+                    <p>幸せな生活が送れますように<i class="fas fa-paw"></i></p>
                 </div>
             </div>
         </section>

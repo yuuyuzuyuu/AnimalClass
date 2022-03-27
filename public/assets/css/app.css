@@ -78,6 +78,7 @@ img {
 #about {
     background-image: url(/images/dog1.png);
     background-size: cover;
+    padding: 50px;
     height: 550px;
     width: 80%;
     border-radius: 15px;
@@ -117,15 +118,18 @@ img {
     border-radius: 15px;
 }
 
-.top-comment {
-    top: 50%;
-    left: 60%;
+.top-comment-left {
+    top: 15%;
+    left: 10%;
     position: absolute;
     text-align: center;
-    padding: 50px;
-    background-color: rgba(255, 255, 255, 0.6);
-    /*border-radius: 10px 100px / 120px;*/
-    border-radius: 50%;
+}
+
+.top-comment-right {
+    top: 70%;
+    left: 10%;
+    position: absolute;
+    text-align: center;
 }
 
 .second-title {
@@ -135,7 +139,7 @@ img {
 }
 
 .user-top p {
-    color: #A0937D;
+    color: beige;
 }
 
 .top-comment p {
