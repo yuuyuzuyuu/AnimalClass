@@ -60,20 +60,22 @@ img {
 }
 
 /*トップページ*/
-#about, #dogsandcats, #reservation, #contact, #sns {
-    padding: 150px 0;
+#top {
+    background-image: url(/images/top.png);
+    position: relative;
+    background-size: cover;
+    height: 550px;
+    width: 90%;
+    border-radius: 15px;
 }
 
-#top {
+#top, #about, #dogsandcats, #contact, #reservation {
     margin-bottom: 150px;
-    position: relative;
-    height: 600px;
 }
 
 #about {
     background-image: url(/images/dog1.png);
     background-size: cover;
-    padding: 50px;
     height: 550px;
     width: 80%;
     border-radius: 15px;
@@ -105,13 +107,10 @@ img {
     margin-bottom: 20px;
 }
 
-#top {
-    background-image: url(/images/top.png);
-    background-size: cover;
-    height: 550px;
-    width: 90%;
-    border-radius: 15px;
+.top-content {
+    margin: 50px;
 }
+
 
 .top-comment-left {
     top: 15%;
