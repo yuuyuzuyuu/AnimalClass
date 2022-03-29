@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="{{asset('/assets/css/slick-theme.css')}}">
         <link rel="stylesheet" href="{{asset('/assets/css/slick.css')}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" rel="stylesheet">
     </head>
 
     <body>

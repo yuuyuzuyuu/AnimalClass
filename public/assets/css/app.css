@@ -1,12 +1,13 @@
-/*全体*/
-@font-face {
-    font-family: Font;
-    src: url("/fonts/NotoSansCJKjp-Light.otf") format("truetype");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
+/*全体*/
 body {
     background-color: #F6E6CB;
-    font-family: Font;
+    font-family: 'Kiwi Maru', serif;
     min-height: 100vh;
 }
 
@@ -14,18 +15,22 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    min-height: 100vh;
-    margin: 0 200px 0 0;
 }
 
 header {
-    width: 20%;
+    width: 17%;
     background-color: #E7D4B5;
 }
 
 main {
-    margin-top: 100px;
-    width: 70%;
+    width: 78%;
+}
+
+@media screen and (max-width:768px){
+    header,
+    main{
+        width: 100%;
+    }
 }
 
 a, a:hover, a:visited {
@@ -55,14 +60,45 @@ img {
 }
 
 /*トップページ*/
-#about, #dogsandcats, #reservation, #contact, #sns {
-    padding: 150px 0;
+#top {
+    background-image: url(/images/top.png);
+    position: relative;
+    background-size: cover;
+    height: 550px;
+    width: 90%;
+    border-radius: 15px;
 }
 
-#top {
+#top, #about, #dogsandcats, #contact, #reservation {
     margin-bottom: 150px;
-    position: relative;
-    height: 600px;
+}
+
+#about {
+    background-image: url(/images/dog1.png);
+    background-size: cover;
+    height: 550px;
+    width: 80%;
+    border-radius: 15px;
+}
+
+#contact {
+    background-image: url(/images/dog2.png);
+    background-size: cover;
+    height: 550px;
+    width: 80%;
+    border-radius: 15px;
+}
+
+#reservation {
+    background-image: url(/images/cat2.png);
+    background-size: cover;
+    height: 550px;
+    width: 80%;
+    border-radius: 15px;
+}
+
+.user-top {
+    margin-top: 100px;
 }
 
 .top-title {
@@ -71,21 +107,23 @@ img {
     margin-bottom: 20px;
 }
 
-.top-image {
-    background-image: url(/images/top.png);
-    background-size: cover;
-    height: 550px;
-    width: 100%;
+.top-content {
+    margin: 50px;
 }
 
-.top-comment {
-    top: 50%;
-    left: 60%;
+
+.top-comment-left {
+    top: 15%;
+    left: 10%;
     position: absolute;
     text-align: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 10px 100px / 120px;
+}
+
+.top-comment-right {
+    top: 70%;
+    left: 10%;
+    position: absolute;
+    text-align: center;
 }
 
 .second-title {
@@ -95,7 +133,7 @@ img {
 }
 
 .user-top p {
-    color: #A0937D;
+    color: beige;
 }
 
 .top-comment p {
@@ -119,7 +157,7 @@ img {
 nav ul {
     list-style: none;
     text-align: center;
-    padding: 0;
+    /*padding: 0;*/
 }
 
 nav ul li {
@@ -164,7 +202,7 @@ nav li.has-child:active >ul {
 }
 
 nav li.has-child ul li a {
-    color: white;
+    /*color: white;*/
     border-bottom: solid 1px rgba(255, 255, 255, 0.6);
     border-left: solid 1px rgba(255, 255, 255, 0.6);
 }
@@ -177,6 +215,27 @@ nav li.has-child ul li a:hover,
 nav li.has-child ul li a:active {
     background: #A0937D;
 }
+
+@media screen and (max-width:768px) {
+    /*nav{*/
+    /*    background: #333;*/
+    /*    color: #fff;*/
+    /*}*/
+
+    nav li.has-child ul,
+    nav li.has-child ul ul{
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        visibility: visible;
+        opacity: 1;
+        display: none;
+        transition: none;
+    }
+
+}
+
 
 /*ページリンク*/
 
