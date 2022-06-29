@@ -15,6 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    min-height: 650px;
 }
 
 header {
@@ -24,6 +25,7 @@ header {
 
 main {
     width: 78%;
+    margin-top: 100px;
 }
 
 @media screen and (max-width:768px){
@@ -99,10 +101,6 @@ img {
     height: 550px;
     width: 80%;
     border-radius: 15px;
-}
-
-.user-top {
-    margin-top: 100px;
 }
 
 .top-title {
