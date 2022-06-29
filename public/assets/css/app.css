@@ -73,6 +73,10 @@ img {
     margin-bottom: 150px;
 }
 
+#dogsandcats p {
+    color: black;
+}
+
 #about {
     background-image: url(/images/dog1.png);
     background-size: cover;
