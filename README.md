@@ -6,6 +6,14 @@
 
 ### URL
 https://anicla.herokuapp.com/
+■一般の方ログイン
+ID：aaa@aaa.aaa
+Pass：aaaaaaaa
+■施設の方ログイン
+ID：ccc@ccc.ccc
+Pass：cccccccc
+
+★ご自由に会員登録なさってください
 
 ### テーマを選んだ理由
 - 自分が保健所から引き取った猫を飼っているということもあり、ペットショップからではなく、保健所から猫を引き取る人が増えてほしいという願いを込めて作成。
