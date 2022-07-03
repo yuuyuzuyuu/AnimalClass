@@ -6,12 +6,12 @@
 
 ### URL
 https://anicla.herokuapp.com/
-■一般の方ログイン
-ID：aaa@aaa.aaa
-Pass：aaaaaaaa
-■施設の方ログイン
-ID：ccc@ccc.ccc
-Pass：cccccccc
+- 一般の方ログイン　　
+ID：aaa@aaa.aaa　　
+Pass：aaaaaaaa　　
+- 施設の方ログイン　　
+ID：ccc@ccc.ccc　　
+Pass：cccccccc　　
 
 ★ご自由に会員登録なさってください
 
